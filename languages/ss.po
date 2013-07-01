@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-06 21:23-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.php:17
+msgid "Simple Sidebars"
+msgstr ""
+
+#: admin.php:66
+msgid ""
+"Nice try, partner. But that sidebar doesn't exist. Click back and try again."
+msgstr ""
+
+#: admin.php:72
+msgid "Edit Sidebar"
+msgstr ""
+
+#: admin.php:79 admin.php:117 admin.php:125 admin.php:152
+msgid "Name"
+msgstr ""
+
+#: admin.php:81 admin.php:154
+msgid "A recognizable name for your new sidebar widget area"
+msgstr ""
+
+#: admin.php:85 admin.php:118 admin.php:126 admin.php:158
+msgid "ID"
+msgstr ""
+
+#: admin.php:89
+msgid ""
+"The unique ID is used to register the sidebar widget area (cannot be changed)"
+msgstr ""
+
+#: admin.php:93 admin.php:119 admin.php:127 admin.php:164
+msgid "Description"
+msgstr ""
+
+#: admin.php:99
+msgid "Update"
+msgstr ""
+
+#: admin.php:106
+msgid "Genesis - Simple Sidebars"
+msgstr ""
+
+#: admin.php:113
+msgid "Current Sidebars"
+msgstr ""
+
+#: admin.php:146 admin.php:168
+msgid "Add New Sidebar"
+msgstr ""
+
+#: admin.php:160
+msgid "The unique ID is used to register the sidebar widget area"
+msgstr ""
+
+#: functions.php:28
+msgid "Edit"
+msgstr ""
+
+#: functions.php:29
+msgid "Delete"
+msgstr ""
+
+#: functions.php:137
+msgid "Oops! Please choose a valid Name and ID for this sidebar"
+msgstr ""
+
+#: functions.php:140
+msgid "Oops! That sidebar ID already exists"
+msgstr ""
+
+#: functions.php:143
+msgid ""
+"Oops! You are trying to edit a sidebar that does not exist, or is not "
+"editable"
+msgstr ""
+
+#: functions.php:146
+msgid ""
+"Oops! You are trying to delete a sidebar that does not exist, or cannot be "
+"deleted"
+msgstr ""
+
+#: functions.php:149
+msgid "Oops! Something went wrong. Try again."
+msgstr ""
+
+#: functions.php:165
+msgid "New sidebar successfully created!"
+msgstr ""
+
+#: functions.php:170
+msgid "Sidebar successfully edited!"
+msgstr ""
+
+#: functions.php:175
+msgid "Sidebar successfully deleted."
+msgstr ""
+
+#: inpost.php:10
+msgid "Sidebar Selection"
+msgstr ""
+
+#: inpost.php:22 term.php:29
+msgid "Primary Sidebar"
+msgstr ""
+
+#: inpost.php:24 inpost.php:36 term.php:32 term.php:46
+msgid "Default"
+msgstr ""
+
+#: inpost.php:34 term.php:43
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: plugin.php:21
+#, php-format
+msgid ""
+"Sorry, you can't activate unless you have installed <a href=\"%s\">Genesis</"
+"a>"
+msgstr ""
+
+#: plugin.php:26
+#, php-format
+msgid ""
+"Sorry, you cannot activate without <a href=\"%s\">Genesis %s</a> or greater"
+msgstr ""
+
+#: term.php:25
+msgid "Sidebar Options"
+msgstr ""
