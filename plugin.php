@@ -6,7 +6,7 @@
 	Author: Nathan Rice
 	Author URI: http://www.nathanrice.net/
 
-	Version: 1.8.0
+	Version: 1.8.0.1
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -48,12 +48,6 @@ add_action( 'genesis_init', 'simplehooks_init', 20 );
  * @since 1.8.0
  */
 function simplehooks_init() {
-	
-	/** Verify version */
-	if ( version_compare( PARENT_THEME_VERSION, '1.8.0', '<' ) ) {
-		deactivate_plugins( plugin_basename( __FILE__ ) ); /** Deactivate ourself */
-		wp_die( sprintf( __( 'Sorry, this version of Simple Hooks requires WordPress 3.3 (or later) and Genesis %s (or later).', 'simplehooks' ), $latest ) );
-	}
 
 	/** Admin Menu */
 	if ( is_admin() )
