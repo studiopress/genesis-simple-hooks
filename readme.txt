@@ -2,9 +2,9 @@
 Contributors: nathanrice, studiopress
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5553118
 Tags: hooks, genesis, genesiswp, studiopress
-Requires at least: 3.3
-Tested up to: 3.3.1
-Stable tag: 1.8.0.2
+Requires at least: 3.6
+Tested up to: 3.6
+Stable tag: 2.0.0
 
 This plugin creates a new Genesis settings page that allows you to insert code (HTML, Shortcodes, and PHP), and attach it to any of the 50+ action hooks throughout the Genesis Theme Framework, from StudioPress.
 
@@ -118,3 +118,7 @@ The most common request from Genesis users is how to properly modify their foote
 
 = 1.8.0.2 =
 * Fixed yet another fatal error but for people using less than Genesis 1.8.0. It should now deactivate gracefully.
+
+= 2.0.0 =
+* Updated to use new entry hooks in Genesis 2.0.
+* Remove unused boxes.php file.
