@@ -55,7 +55,7 @@ function simplehooks_form_generate( $args = array() ) {
 		}
 	?>
 
-	<p><textarea name="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][content]" cols="70" rows="5"><?php echo htmlentities( simplehooks_get_option($args['hook'], 'content') ); ?></textarea></p>
+	<p><textarea name="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][content]" cols="70" rows="5"><?php echo htmlentities( simplehooks_get_option($args['hook'], 'content'), ENT_QUOTES, 'UTF-8' ); ?></textarea></p>
 
 	<p>
 		<input type="checkbox" name="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][shortcodes]" id="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][shortcodes]" value="1" <?php checked(1, simplehooks_get_option($args['hook'], 'shortcodes')); ?> /> <label for="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][shortcodes]"><?php _e('Execute Shortcodes on this hook?', 'simplehooks'); ?></label><br />

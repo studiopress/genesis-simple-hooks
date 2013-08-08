@@ -3,16 +3,16 @@
 Plugin Name: Genesis Simple Hooks
 Plugin URI: http://www.studiopress.com/plugins/simple-hooks
 Description: Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the Genesis Theme.
-Version: 1.2
+Version: 1.3.1
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 */
 
-// require Genesis 1.2.1 upon activation
+// require Genesis 1.3.1 upon activation
 register_activation_hook(__FILE__, 'simplehooks_activation_check');
 function simplehooks_activation_check() {
 
-		$latest = '1.2.1';
+		$latest = '1.3.1';
 		
 		$theme_info = get_theme_data(TEMPLATEPATH.'/style.css');
 	

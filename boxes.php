@@ -105,7 +105,8 @@ function simplehooks_loop_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_loop',
-		'desc' => __('This hook executes both default and custom loops.', 'simplehooks')
+		'desc' => __('This hook executes both default and custom loops.', 'simplehooks'),
+		'unhook' => array('genesis_do_loop')
 	));
 	
 	simplehooks_form_generate(array(
@@ -121,7 +122,8 @@ function simplehooks_loop_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_loop_else',
-		'desc' => __('This hook executes after the <code>else :</code> statement in all loop blocks. The content attached to this hook will only display if there are no posts available when a loop is executed.', 'simplehooks')
+		'desc' => __('This hook executes after the <code>else :</code> statement in all loop blocks. The content attached to this hook will only display if there are no posts available when a loop is executed.', 'simplehooks'),
+		'unhook' => array('genesis_do_noposts')
 	));
 	
 	simplehooks_form_submit();
@@ -148,7 +150,8 @@ function simplehooks_post_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_post_title',
-		'desc' => __('This hook outputs the post/page title.', 'simplehooks')
+		'desc' => __('This hook outputs the post/page title.', 'simplehooks'),
+		'unhook' => array('genesis_do_post_title')
 	));
 	
 	simplehooks_form_generate(array(
@@ -164,7 +167,8 @@ function simplehooks_post_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_post_content',
-		'desc' => __('This hook outputs the content of the post/page, by default.', 'simplehooks')
+		'desc' => __('This hook outputs the content of the post/page, by default.', 'simplehooks'),
+		'unhook' => array('genesis_do_post_image', 'genesis_do_post_content')
 	));
 	
 	simplehooks_form_generate(array(
@@ -186,12 +190,14 @@ function simplehooks_comment_list_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_comments',
-		'desc' => __('This hook outputs the comments block, including the <code>#comments</code> div.', 'simplehooks')
+		'desc' => __('This hook outputs the comments block, including the <code>#comments</code> div.', 'simplehooks'),
+		'unhook' => array('genesis_do_comments')
 	));
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_list_comments',
-		'desc' => __('This hook executes inside the comments block, inside the <code>.comment-list</code> OL. By default, it outputs a list of comments associated with a post via the <code>genesis_default_list_comments()</code> function.', 'simplehooks')
+		'desc' => __('This hook executes inside the comments block, inside the <code>.comment-list</code> OL. By default, it outputs a list of comments associated with a post via the <code>genesis_default_list_comments()</code> function.', 'simplehooks'),
+		'unhook' => array('genesis_default_list_comments')
 	));
 	
 	simplehooks_form_generate(array(
@@ -205,7 +211,8 @@ function simplehooks_ping_list_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_before_pings',
-		'desc' => __('This hook executes immediately before the pings block (outside the <code>#pings</code> div).', 'simplehooks')
+		'desc' => __('This hook executes immediately before the pings block (outside the <code>#pings</code> div).', 'simplehooks'),
+		'unhook' => array('genesis_do_pings')
 	));
 	
 	simplehooks_form_generate(array(
@@ -215,7 +222,8 @@ function simplehooks_ping_list_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_list_pings',
-		'desc' => __('This hook executes inside the pings block, inside the <code>.ping-list</code> OL. By default, it outputs a list of pings associated with a post via the <code>genesis_default_list_pings()</code> function.', 'simplehooks')
+		'desc' => __('This hook executes inside the pings block, inside the <code>.ping-list</code> OL. By default, it outputs a list of pings associated with a post via the <code>genesis_default_list_pings()</code> function.', 'simplehooks'),
+		'unhook' => array('genesis_default_list_pings')
 	));
 	
 	simplehooks_form_generate(array(
@@ -252,7 +260,8 @@ function simplehooks_comment_form_hooks_box() {
 	
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_comment_form',
-		'desc' => __('This hook outputs the entire comment form, including the <code>#respond</code> div.', 'simplehooks')
+		'desc' => __('This hook outputs the entire comment form, including the <code>#respond</code> div.', 'simplehooks'),
+		'unhook' => array('genesis_do_comment_form')
 	));
 	
 	simplehooks_form_generate(array(
