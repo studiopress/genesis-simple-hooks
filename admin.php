@@ -11,12 +11,16 @@ function simplehooks_defaults() {
 		'wp_head' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'wp_footer' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
+		##################### internals
+		'genesis_pre' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_pre_framework' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_init' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
+		##################### document head
 		'genesis_title' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		
 		'genesis_meta' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
+		##################### structural
 		'genesis_before' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_after' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
@@ -33,9 +37,31 @@ function simplehooks_defaults() {
 		'genesis_before_content' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_after_content' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
+		'genesis_before_sidebar' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_sidebar' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_after_sidebar' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		
+		'genesis_before_sidebar_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_after_sidebar_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		
+		'genesis_before_sidebar_alt' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_sidebar_alt' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_after_sidebar_alt' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		
+		'genesis_before_sidebar_alt_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_after_sidebar_alt_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		
+		'genesis_before_footer' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_footer' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_after_footer' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		
+		##################### loop
 		'genesis_before_loop' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_loop' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_after_loop' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		
+		'genesis_after_endwhile' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_loop_else' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
 		'genesis_before_post' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_after_post' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
@@ -48,9 +74,7 @@ function simplehooks_defaults() {
 		'genesis_post_content' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_after_post_content' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
-		'genesis_after_endwhile' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		'genesis_loop_else' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		
+		##################### comments
 		'genesis_before_comments' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_comments' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_list_comments' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
@@ -65,18 +89,12 @@ function simplehooks_defaults() {
 		'genesis_comment' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_after_comment' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		
+		'genesis_before_comment' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		'genesis_after_comment' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
+		
 		'genesis_before_comment_form' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
 		'genesis_comment_form' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		'genesis_after_comment_form' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		
-		'genesis_before_sidebar_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		'genesis_after_sidebar_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		'genesis_before_sidebar_alt_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		'genesis_after_sidebar_alt_widget_area' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		
-		'genesis_before_footer' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		'genesis_footer' => array('content' => '', 'php' => 0, 'shortcodes' => 0),
-		'genesis_after_footer' => array('content' => '', 'php' => 0, 'shortcodes' => 0)
+		'genesis_after_comment_form' => array('content' => '', 'php' => 0, 'shortcodes' => 0)
 	
 	);
 

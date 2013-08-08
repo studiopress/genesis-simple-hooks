@@ -235,11 +235,6 @@ function simplehooks_comment_hooks_box() {
 	));
 	
 	simplehooks_form_generate(array(
-		'hook' => 'genesis_comment',
-		'desc' => __('This hook is available to add to the content of each comment.', 'simplehooks')
-	));
-	
-	simplehooks_form_generate(array(
 		'hook' => 'genesis_after_comment',
 		'desc' => __('This hook executes immediately after each individual comment (inside the <code>.comment</code> list item).', 'simplehooks')
 	));
@@ -272,6 +267,22 @@ function simplehooks_comment_form_hooks_box() {
 function simplehooks_sidebar_hooks_box() {
 	
 	simplehooks_form_generate(array(
+		'hook' => 'genesis_before_sidebar',
+		'desc' => __('This hook executes immediately before the primary sidebar column (outside the <code>#sidebar</code> div).', 'simplehooks')
+	));
+	
+	simplehooks_form_generate(array(
+		'hook' => 'genesis_sidebar',
+		'desc' => __('This hook outputs the content of the primary sidebar, including the widget area output.', 'simplehooks'),
+		'unhook' => array('genesis_do_sidebar')
+	));
+	
+	simplehooks_form_generate(array(
+		'hook' => 'genesis_after_sidebar',
+		'desc' => __('This hook executes immediately after the primary sidebar column (outside the <code>#sidebar</code> div).', 'simplehooks')
+	));
+	
+	simplehooks_form_generate(array(
 		'hook' => 'genesis_before_sidebar_widget_area',
 		'desc' => __('This hook executes immediately before the primary sidebar widget area (inside the <code>#sidebar</code> div).', 'simplehooks')
 	));
@@ -279,6 +290,22 @@ function simplehooks_sidebar_hooks_box() {
 	simplehooks_form_generate(array(
 		'hook' => 'genesis_after_sidebar_widget_area',
 		'desc' => __('This hook executes immediately after the primary sidebar widget area (inside the <code>#sidebar</code> div).', 'simplehooks')
+	));
+	
+	simplehooks_form_generate(array(
+		'hook' => 'genesis_before_sidebar_alt',
+		'desc' => __('This hook executes immediately before the alternate sidebar column (outside the <code>#sidebar-alt</code> div).', 'simplehooks')
+	));
+	
+	simplehooks_form_generate(array(
+		'hook' => 'genesis_sidebar_alt',
+		'desc' => __('This hook outputs the content of the secondary sidebar, including the widget area output.', 'simplehooks'),
+		'unhook' => array('genesis_do_sidebar_alt')
+	));
+	
+	simplehooks_form_generate(array(
+		'hook' => 'genesis_after_sidebar_alt',
+		'desc' => __('This hook executes immediately after the alternate sidebar column (outside the <code>#sidebar-alt</code> div).', 'simplehooks')
 	));
 	
 	simplehooks_form_generate(array(
