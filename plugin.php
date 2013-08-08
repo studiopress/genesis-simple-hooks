@@ -27,7 +27,7 @@ register_activation_hook( __FILE__, 'simplehooks_activation' );
  */
 function simplehooks_activation() {
 
-	if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, '2.0.0', >= ) )
+	if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, '2.0.0', '>=' ) )
 		simplehooks_deactivate( '2.0.0', '3.6' );
 
 }
