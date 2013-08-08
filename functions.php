@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Pull an EasyHook option from the database, return value
+ * Pull an Simple Hooks option from the database, return value
  *
  * @since 0.1
  */
@@ -16,7 +16,7 @@ function simplehooks_get_option($hook = null, $field = null, $all = false) {
 	if ( ! array_key_exists( $hook, (array)$options ) )
         return '';
 	
-	$option = $options[$hook][$field];
+	$option = isset( $options[$hook][$field] ) ? $options[$hook][$field] : '';
 	return wp_kses_stripslashes( wp_kses_decode_entities( $option ) );
 	
 }
