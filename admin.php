@@ -40,24 +40,24 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		$default_settings = array(
 			
-			/** Wordpress Hooks */
+			//* Wordpress Hooks
 			'wp_head' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'wp_footer' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Internal Hooks */
+			//* Internal Hooks
 			'genesis_pre' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_pre_framework' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_init' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_setup' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Document Hooks */
+			//* Document Hooks
 			'genesis_doctype' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_title' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_meta' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_before' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Header hooks */
+			//* Header hooks
 			'genesis_before_header' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_header' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_header_right' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
@@ -66,14 +66,14 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'genesis_site_title' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_site_description' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Content Hooks */
+			//* Content Hooks
 			'genesis_before_content_sidebar_wrap' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_content_sidebar_wrap' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
 			'genesis_before_content' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_content' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Loop Hooks */
+			//* Loop Hooks
 			'genesis_before_loop' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_loop' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_loop' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
@@ -81,7 +81,14 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'genesis_after_endwhile' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_loop_else' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Post Hooks */
+			//* HTML5 Entry Hooks
+			'genesis_before_entry' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
+			'genesis_entry_header' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
+			'genesis_entry_content' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
+			'genesis_entry_footer' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
+			'genesis_after_entry' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
+			
+			//* xHTML Entry Hooks
 			'genesis_before_post' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_post' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
@@ -93,7 +100,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'genesis_post_content' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_post_content' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Comment Hooks */
+			//* Comment Hooks
 			'genesis_before_comments' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_comments' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_list_comments' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
@@ -115,7 +122,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'genesis_comment_form' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_comment_form' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Sidebar Hooks */
+			//* Sidebar Hooks
 			'genesis_before_sidebar' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_sidebar' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_sidebar' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
@@ -134,7 +141,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'genesis_footer' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_footer' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
-			/** Admin Hooks */
+			//* Admin Hooks
 			'genesis_import_export_form' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_export' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_import' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
@@ -143,7 +150,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			
 		);
 
-		/** Create the page */
+		//* Create the page */
 		$this->create( $page_id, $menu_ops, $page_ops, $settings_field, $default_settings );
 		
 	}
@@ -156,7 +163,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 	 */
 	function scripts() {
 		
-		/** Load parent scripts as well as Genesis admin scripts */
+		//* Load parent scripts as well as Genesis admin scripts */
 		parent::scripts();
 		genesis_load_admin_js();
 		
@@ -175,7 +182,12 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 		add_meta_box( 'simplehooks-header-hooks', __( 'Header Hooks', 'simplehooks' ), array( $this, 'header_hooks_box' ), $this->pagehook, 'main' );
 		add_meta_box( 'simplehooks-content-hooks', __( 'Content Hooks', 'simplehooks' ), array( $this, 'content_hooks_box' ), $this->pagehook, 'main' );
 		add_meta_box( 'simplehooks-loop-hooks', __( 'Loop Hooks', 'simplehooks' ), array( $this, 'loop_hooks_box' ), $this->pagehook, 'main' );
-		add_meta_box( 'simplehooks-post-hooks', __( 'Post/Page Hooks', 'simplehooks' ), array( $this, 'post_hooks_box' ), $this->pagehook, 'main' );
+		
+		if ( current_theme_supports( 'html5' ) )
+			add_meta_box( 'simplehooks-entry-hooks', __( 'Entry Hooks', 'simplehooks' ), array( $this, 'html5_entry_hooks_box' ), $this->pagehook, 'main' );
+		else
+			add_meta_box( 'simplehooks-post-hooks', __( 'Post/Page Hooks', 'simplehooks' ), array( $this, 'post_hooks_box' ), $this->pagehook, 'main' );
+		
 		add_meta_box( 'simplehooks-comment-list-hooks', __( 'Comment List Hooks', 'simplehooks' ), array( $this, 'comment_list_hooks_box' ), $this->pagehook, 'main' );
 		add_meta_box( 'simplehooks-ping-list-hooks', __( 'Ping List Hooks', 'simplehooks' ), array( $this, 'ping_list_hooks_box' ), $this->pagehook, 'main' );
 		add_meta_box( 'simplehooks-comment-hooks', __( 'Single Comment Hooks', 'simplehooks' ), array( $this, 'comment_hooks_box' ), $this->pagehook, 'main' );
@@ -304,6 +316,37 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'hook' => 'genesis_loop_else',
 			'desc' => __( 'This hook executes after the <code>else :</code> statement in all loop blocks. The content attached to this hook will only display if there are no posts available when a loop is executed.', 'simplehooks' ),
 			'unhook' => array( 'genesis_do_noposts' )
+		) );
+
+		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
+
+	}
+
+	function html5_entry_hooks_box() {
+
+		simplehooks_form_generate(array(
+			'hook' => 'genesis_before_entry',
+			'desc' => __( 'This hook executes before each entry in all loop blocks (outside the entry markup element).', 'simplehooks' )
+		) );
+
+		simplehooks_form_generate(array(
+			'hook' => 'genesis_entry_header',
+			'desc' => __( 'This hook executes before the entry content. By default, it outputs the entry title and meta information.', 'simplehooks' )
+		) );
+
+		simplehooks_form_generate(array(
+			'hook' => 'genesis_entry_content',
+			'desc' => __( 'This hook, by default, outputs the entry content.', 'simplehooks' )
+		) );
+
+		simplehooks_form_generate(array(
+			'hook' => 'genesis_entry_footer',
+			'desc' => __( 'This hook executes after the entry content. By Default, it outputs entry meta information.', 'simplehooks' )
+		) );
+
+		simplehooks_form_generate(array(
+			'hook' => 'genesis_after_entry',
+			'desc' => __( 'This hook executes after each entry in all loop blocks (outside the entry markup element).', 'simplehooks' )
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );

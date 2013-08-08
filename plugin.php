@@ -2,17 +2,19 @@
 /*
 	Plugin Name: Genesis Simple Hooks
 	Plugin URI: http://www.studiopress.com/plugins/simple-hooks
+	
 	Description: Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the Genesis Theme.
+	
 	Author: Nathan Rice
 	Author URI: http://www.nathanrice.net/
 
-	Version: 1.8.0.2
+	Version: 2.0.0
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
 */
 
-/** Define our constants */
+//* Define our constants
 define( 'SIMPLEHOOKS_SETTINGS_FIELD', 'simplehooks-settings' );
 define( 'SIMPLEHOOKS_PLUGIN_DIR', dirname( __FILE__ ) );
 
@@ -25,9 +27,8 @@ register_activation_hook( __FILE__, 'simplehooks_activation' );
  */
 function simplehooks_activation() {
 
-	if ( 'genesis' != basename( TEMPLATEPATH ) ) {
-		simplehooks_deactivate( '1.8.0', '3.3' );
-	}
+	if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, '2.0.0', >= ) )
+		simplehooks_deactivate( '2.0.0', '3.6' );
 
 }
 
@@ -38,10 +39,10 @@ function simplehooks_activation() {
  *
  * @since 1.8.0.2
  */
-function simplehooks_deactivate( $genesis_version = '1.8.0', $wp_version = '3.3' ) {
+function simplehooks_deactivate( $genesis_version = '2.0.0', $wp_version = '3.6' ) {
 	
 	deactivate_plugins( plugin_basename( __FILE__ ) );
-	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'simplehooks' ), $wp_version, 'http://www.studiopress.com/support/showthread.php?t=19576', $genesis_version ) );
+	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'simplehooks' ), $wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $genesis_version ) );
 	
 }
 
@@ -52,16 +53,12 @@ add_action( 'genesis_init', 'simplehooks_init', 20 );
  * @since 1.8.0
  */
 function simplehooks_init() {
-	
-	/** Deactivate if not running Genesis 1.8.0 or greater */
-	if ( ! class_exists( 'Genesis_Admin_Boxes' ) )
-		add_action( 'admin_init', 'simplehooks_deactivate', 10, 0 );
 
-	/** Admin Menu */
+	//* Admin Menu
 	if ( is_admin() )
 		require_once( SIMPLEHOOKS_PLUGIN_DIR . '/admin.php' );
 	
-	/** Helper function */
+	//* Helper functions
 	require_once( SIMPLEHOOKS_PLUGIN_DIR . '/functions.php' );
 	
 }
@@ -81,12 +78,12 @@ function simplehooks_execute_hooks() {
 
 	foreach ( (array) $hooks as $hook => $array ) {
 
-		/** Add new content to hook */
+		//* Add new content to hook
 		if ( simplehooks_get_option( $hook, 'content' ) ) {
 			add_action( $hook, 'simplehooks_execute_hook' );
 		}
 
-		/** Unhook stuff */
+		//* Unhook stuff
 		if ( isset( $array['unhook'] ) ) {
 
 			foreach( (array) $array['unhook'] as $function ) {
