@@ -6,7 +6,7 @@
 	Author: Nathan Rice
 	Author URI: http://www.nathanrice.net/
 
-	Version: 1.8.0.1
+	Version: 1.8.0.2
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -18,27 +18,31 @@ define( 'SIMPLEHOOKS_PLUGIN_DIR', dirname( __FILE__ ) );
 
 register_activation_hook( __FILE__, 'simplehooks_activation' );
 /**
- * This function runs on plugin activation. It checks to make sure the required
- * minimum Genesis version is installed. If not, it deactivates itself.
+ * This function runs on plugin activation. It checks to make sure Genesis
+ * or a Genesis child theme is active. If not, it deactivates itself.
  *
  * @since 0.1.0
  */
 function simplehooks_activation() {
 
-		$latest = '1.8.0';
+	if ( 'genesis' != basename( TEMPLATEPATH ) ) {
+		simplehooks_deactivate( '1.8.0', '3.3' );
+	}
 
-		$theme_info = get_theme_data( TEMPLATEPATH . '/style.css' );
+}
 
-		if ( 'genesis' != basename( TEMPLATEPATH ) ) {
-	        deactivate_plugins( plugin_basename( __FILE__ ) ); /** Deactivate ourself */
-			wp_die( sprintf( __( 'Sorry, you can\'t activate unless you have installed <a href="%s">Genesis</a>', 'simplehooks' ), 'http://www.studiopress.com/themes/genesis' ) );
-		}
-
-		if ( version_compare( $theme_info['Version'], $latest, '<' ) ) {
-			deactivate_plugins( plugin_basename( __FILE__ ) ); /** Deactivate ourself */
-			wp_die( sprintf( __( 'Sorry, you cannot activate without <a href="%s">Genesis %s</a> or greater', 'simplehooks' ), 'http://www.studiopress.com/support/showthread.php?t=19576', $latest ) );
-		}
-
+/**
+ * Deactivate Simple Hooks.
+ *
+ * This function deactivates Simple Hooks.
+ *
+ * @since 1.8.0.2
+ */
+function simplehooks_deactivate( $genesis_version = '1.8.0', $wp_version = '3.3' ) {
+	
+	deactivate_plugins( plugin_basename( __FILE__ ) );
+	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'simplehooks' ), $wp_version, 'http://www.studiopress.com/support/showthread.php?t=19576', $genesis_version ) );
+	
 }
 
 add_action( 'genesis_init', 'simplehooks_init', 20 );
@@ -48,6 +52,10 @@ add_action( 'genesis_init', 'simplehooks_init', 20 );
  * @since 1.8.0
  */
 function simplehooks_init() {
+	
+	/** Deactivate if not running Genesis 1.8.0 or greater */
+	if ( ! class_exists( 'Genesis_Admin_Boxes' ) )
+		add_action( 'admin_init', 'simplehooks_deactivate', 10, 0 );
 
 	/** Admin Menu */
 	if ( is_admin() )
