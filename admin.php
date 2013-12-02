@@ -201,12 +201,13 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'wp_head',
-			'desc' => __( 'This hook executes immediately before the closing <code>&lt;/head&gt;</code> tag.', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the closing <code>&lt;/head&gt;</code> tag.', 'simplehooks' ),
+			'unhook' => array( 'genesis_load_favicon' ),
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'wp_footer',
-			'desc' => __( 'This hook executes immediately before the closing <code>&lt;/body&gt;</code> tag.', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the closing <code>&lt;/body&gt;</code> tag.', 'simplehooks' ),
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
@@ -223,7 +224,6 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_meta',
 			'desc' => __( 'This hook executes in the document <code>&lt;head&gt;</code>.<br /> It is commonly used to output <code>META</code> information about the document.', 'simplehooks' ),
-			'unhook' => array( 'genesis_load_favicon' )
 		) );
 
 		simplehooks_form_generate( array(
