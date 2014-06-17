@@ -63,7 +63,9 @@ function simplehooks_form_generate( $args = array() ) {
 
 	<p>
 		<input type="checkbox" name="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][shortcodes]" id="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][shortcodes]" value="1" <?php checked( 1, simplehooks_get_option( $args['hook'], 'shortcodes' ) ); ?> /> <label for="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][shortcodes]"><?php _e( 'Execute Shortcodes on this hook?', 'simplehooks' ); ?></label><br />
+		<?php if( current_user_can('unfiltered_html')) : ?>
 		<input type="checkbox" name="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][php]" id="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][php]" value="1" <?php checked( 1, simplehooks_get_option( $args['hook'], 'php' ) ); ?> /> <label for="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][php]"><?php _e( 'Execute PHP on this hook?', 'simplehooks' ); ?></label>
+		<?php endif; ?>
 	</p>
 
 	<hr class="div" />
