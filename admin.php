@@ -137,6 +137,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'genesis_before_sidebar_alt_widget_area' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_sidebar_alt_widget_area' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 
+			//* Footer hooks
 			'genesis_before_footer' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_footer' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
 			'genesis_after_footer' => array( 'content' => '', 'php' => 0, 'shortcodes' => 0 ),
@@ -244,18 +245,30 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_header',
-			'desc' => __( 'This hook executes immediately before the header (outside the <code>#header</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the header.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_header',
-			'desc' => __( 'This hook outputs the default header (the <code>#header</code> div)', 'simplehooks' ),
+			'desc' => __( 'This hook outputs the default header.', 'simplehooks' ),
 			'unhook' => array( 'genesis_do_header' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_header',
-			'desc' => __( 'This hook executes immediately after the header (outside the <code>#header</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the header.', 'simplehooks' )
+		) );
+
+		simplehooks_form_generate( array(
+			'hook' => 'genesis_site_title',
+			'desc' => __( 'This hooks executes inside the header, and by default, outputs the site title.' , 'simplehooks' ),
+			'unhook' => array( 'genesis_seo_site_title' ),
+		) );
+
+		simplehooks_form_generate( array(
+			'hook' => 'genesis_site_description',
+			'desc' => __( 'This hooks executes inside the header, and by default, outputs the site description.' , 'simplehooks' ),
+			'unhook' => array( 'genesis_seo_site_description' ),
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
@@ -266,22 +279,22 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_content_sidebar_wrap',
-			'desc' => __( 'This hook executes immediately before the div block that wraps the content and the primary sidebar (outside the <code>#content-sidebar-wrap</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the div block that wraps the content and the primary sidebar.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_content_sidebar_wrap',
-			'desc' => __( 'This hook executes immediately after the div block that wraps the content and the primary sidebar (outside the <code>#content-sidebar-wrap</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the div block that wraps the content and the primary sidebar.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_content',
-			'desc' => __( 'This hook executes immediately before the content column (outside the <code>#content</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the content column.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_content',
-			'desc' => __( 'This hook executes immediately after the content column (outside the <code>#content</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the content column.', 'simplehooks' )
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
@@ -408,24 +421,24 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_comments',
-			'desc' => __( 'This hook executes immediately before the comments block (outside the <code>#comments</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the comments block.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_comments',
-			'desc' => __( 'This hook outputs the comments block, including the <code>#comments</code> div.', 'simplehooks' ),
+			'desc' => __( 'This hook outputs the comments block.', 'simplehooks' ),
 			'unhook' => array( 'genesis_do_comments' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_list_comments',
-			'desc' => __( 'This hook executes inside the comments block, inside the <code>.comment-list</code> OL. By default, it outputs a list of comments associated with a post via the <code>genesis_default_list_comments()</code> function.', 'simplehooks' ),
+			'desc' => __( 'This hook executes inside the comments block. By default, it outputs a list of comments associated with a post via the <code>genesis_default_list_comments()</code> function.', 'simplehooks' ),
 			'unhook' => array( 'genesis_default_list_comments' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_comments',
-			'desc' => __( 'This hook executes immediately after the comments block (outside the <code>#comments</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the comments block.', 'simplehooks' )
 		) );
 
 	}
@@ -434,24 +447,24 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_pings',
-			'desc' => __( 'This hook executes immediately before the pings block (outside the <code>#pings</code> div).', 'simplehooks' ),
+			'desc' => __( 'This hook executes immediately before the pings block.', 'simplehooks' ),
 			'unhook' => array( 'genesis_do_pings' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_pings',
-			'desc' => __( 'This hook outputs the pings block, including the <code>#pings</code> div.', 'simplehooks' )
+			'desc' => __( 'This hook outputs the pings block.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_list_pings',
-			'desc' => __( 'This hook executes inside the pings block, inside the <code>.ping-list</code> OL. By default, it outputs a list of pings associated with a post via the <code>genesis_default_list_pings()</code> function.', 'simplehooks' ),
+			'desc' => __( 'This hook executes inside the pings block. By default, it outputs a list of pings associated with a post via the <code>genesis_default_list_pings()</code> function.', 'simplehooks' ),
 			'unhook' => array( 'genesis_default_list_pings' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_pings',
-			'desc' => __( 'This hook executes immediately after the pings block (outside the <code>#pings</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the pings block.', 'simplehooks' )
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
@@ -478,18 +491,18 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_comment_form',
-			'desc' => __( 'This hook executes immediately before the comment form, outside the <code>#respond</code> div.', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the comment form.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_comment_form',
-			'desc' => __( 'This hook outputs the entire comment form, including the <code>#respond</code> div.', 'simplehooks' ),
+			'desc' => __( 'This hook outputs the entire comment form.', 'simplehooks' ),
 			'unhook' => array( 'genesis_do_comment_form' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_comment_form',
-			'desc' => __( 'This hook executes immediately after the comment form, outside the <code>#respond</code> div.', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the comment form.', 'simplehooks' )
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
@@ -500,7 +513,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_sidebar',
-			'desc' => __( 'This hook executes immediately before the primary sidebar column (outside the <code>#sidebar</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the primary sidebar column.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
@@ -511,22 +524,22 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_sidebar',
-			'desc' => __( 'This hook executes immediately after the primary sidebar column (outside the <code>#sidebar</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the primary sidebar column.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_sidebar_widget_area',
-			'desc' => __( 'This hook executes immediately before the primary sidebar widget area (inside the <code>#sidebar</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the primary sidebar widget area.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_sidebar_widget_area',
-			'desc' => __( 'This hook executes immediately after the primary sidebar widget area (inside the <code>#sidebar</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the primary sidebar widget area.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_sidebar_alt',
-			'desc' => __( 'This hook executes immediately before the alternate sidebar column (outside the <code>#sidebar-alt</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the alternate sidebar column.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
@@ -537,17 +550,17 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_sidebar_alt',
-			'desc' => __( 'This hook executes immediately after the alternate sidebar column (outside the <code>#sidebar-alt</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the alternate sidebar column.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_sidebar_alt_widget_area',
-			'desc' => __( 'This hook executes immediately before the alternate sidebar widget area (inside the <code>#sidebar-alt</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the alternate sidebar widget area.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_sidebar_alt_widget_area',
-			'desc' => __( 'This hook executes immediately after the alternate sidebar widget area (inside the <code>#sidebar-alt</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the alternate sidebar widget area.', 'simplehooks' )
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
@@ -558,18 +571,18 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_footer',
-			'desc' => __( 'This hook executes immediately before the footer (outside the <code>#footer</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately before the footer.', 'simplehooks' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_footer',
-			'desc' => __( 'This hook, by default, outputs the content of the footer (inside the <code>#footer</code> div).', 'simplehooks' ),
+			'desc' => __( 'This hook, by default, outputs the content of the footer.', 'simplehooks' ),
 			'unhook' => array( 'genesis_do_footer' )
 		) );
 
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_footer',
-			'desc' => __( 'This hook executes immediately after the footer (outside the <code>#footer</code> div).', 'simplehooks' )
+			'desc' => __( 'This hook executes immediately after the footer.', 'simplehooks' )
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
