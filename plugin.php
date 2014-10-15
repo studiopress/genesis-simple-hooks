@@ -125,3 +125,24 @@ function simplehooks_execute_hook() {
 		echo $value;
 
 }
+
+/**
+ * The following function will strip unpermitted html tags such as scripts
+ * from the user submitted hook content if that user is not permitted to 
+ * submit unfiltered html on the content
+ *
+ * @since 2.0.1
+ */
+function simplehooks_maybe_kses_filter($option){
+	if(!current_user_can('unfiltered_html')){
+
+		foreach($option as $key => $value){
+			if($value == '')
+				continue;
+			$option[$key]['content'] = wp_kses_post($value['content']);
+		}
+	}
+	return $option;	
+}
+
+add_filter('pre_update_option_'.SIMPLEHOOKS_SETTINGS_FIELD, 'simplehooks_maybe_kses_filter');
