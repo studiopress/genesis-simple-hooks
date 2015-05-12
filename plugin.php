@@ -120,7 +120,7 @@ function simplehooks_execute_hook() {
 	$value = $shortcodes ? do_shortcode( $content ) : $content;
 
 	if ( $php )
-		eval( "?>$value<?php " );
+		eval( "?>$value" );
 	else
 		echo $value;
 
