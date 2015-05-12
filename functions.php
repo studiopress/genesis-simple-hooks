@@ -49,9 +49,17 @@ function simplehooks_form_generate( $args = array() ) {
 		if ( isset( $args['unhook'] ) ) {
 
 			foreach ( (array) $args['unhook'] as $function ) {
+
+				if ( is_array( $function ) ) {
+					$function_name = $function[0];
+					$function = implode( ',', $function );
+				}
+				else {
+					$function_name = $function;
+				}
 			?>
 
-				<input type="checkbox" name="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][unhook][]" id="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][unhook][]" value="<?php echo $function; ?>" <?php if ( in_array( $function, (array) simplehooks_get_option( $args['hook'], 'unhook' ) ) ) echo 'checked'; ?> /> <label for="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][unhook][]"><?php printf( __( 'Unhook <code>%s()</code> function from this hook?', 'simplehooks' ), $function ); ?></label><br />
+				<input type="checkbox" name="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][unhook][]" id="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][unhook][<?php echo $function_name; ?>]" value="<?php echo $function; ?>" <?php if ( in_array( $function, (array) simplehooks_get_option( $args['hook'], 'unhook' ) ) ) echo 'checked'; ?> /> <label for="<?php echo SIMPLEHOOKS_SETTINGS_FIELD; ?>[<?php echo $args['hook']; ?>][unhook][<?php echo $function_name; ?>]"><?php printf( __( 'Unhook <code>%s()</code> function from this hook?', 'simplehooks' ), $function_name ); ?></label><br />
 
 			<?php
 			}

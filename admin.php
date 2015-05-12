@@ -337,29 +337,33 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 	function html5_entry_hooks_box() {
 
-		simplehooks_form_generate(array(
+		simplehooks_form_generate( array(
 			'hook' => 'genesis_before_entry',
 			'desc' => __( 'This hook executes before each entry in all loop blocks (outside the entry markup element).', 'simplehooks' )
 		) );
 
-		simplehooks_form_generate(array(
+		simplehooks_form_generate( array(
 			'hook' => 'genesis_entry_header',
-			'desc' => __( 'This hook executes before the entry content. By default, it outputs the entry title and meta information.', 'simplehooks' )
+			'desc' => __( 'This hook executes before the entry content. By default, it outputs the entry title and meta information.', 'simplehooks' ),
+			'unhook' => array( 'genesis_do_post_title', array( 'genesis_post_info', 12 ) )
 		) );
 
-		simplehooks_form_generate(array(
+		simplehooks_form_generate( array(
 			'hook' => 'genesis_entry_content',
-			'desc' => __( 'This hook, by default, outputs the entry content.', 'simplehooks' )
+			'desc' => __( 'This hook, by default, outputs the entry content.', 'simplehooks' ),
+			'unhook' => array( array( 'genesis_do_post_image', 8 ), 'genesis_do_post_content' )
 		) );
 
-		simplehooks_form_generate(array(
+		simplehooks_form_generate( array(
 			'hook' => 'genesis_entry_footer',
-			'desc' => __( 'This hook executes after the entry content. By Default, it outputs entry meta information.', 'simplehooks' )
+			'desc' => __( 'This hook executes after the entry content. By Default, it outputs entry meta information.', 'simplehooks' ),
+			'unhook' => array( 'genesis_post_meta' )
 		) );
 
-		simplehooks_form_generate(array(
+		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_entry',
-			'desc' => __( 'This hook executes after each entry in all loop blocks (outside the entry markup element).', 'simplehooks' )
+			'desc' => __( 'This hook executes after each entry in all loop blocks (outside the entry markup element).', 'simplehooks' ),
+			'unhook' => array( array( 'genesis_do_author_box_single', 8 ) )
 		) );
 
 		submit_button( __( 'Save Changes', 'simplehooks' ), 'primary' );
@@ -376,7 +380,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 		simplehooks_form_generate( array(
 			'hook' => 'genesis_after_post',
 			'desc' => __( 'This hook executes after each post in all loop blocks (outside the <code>post_class()</code> div).', 'simplehooks' ),
-			'unhook' => array( 'genesis_do_author_box' )
+			'unhook' => array( 'genesis_do_author_box_single' )
 		) );
 
 		simplehooks_form_generate( array(
