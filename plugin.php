@@ -12,11 +12,55 @@
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
+
+	Text Domain: genesis-simple-hooks
+	Domain Path: /languages/
 */
 
 //* Define our constants
 define( 'SIMPLEHOOKS_SETTINGS_FIELD', 'simplehooks-settings' );
 define( 'SIMPLEHOOKS_PLUGIN_DIR', dirname( __FILE__ ) );
+
+add_action( 'plugins_loaded', 'simplehooks_load_translations', 1 );
+/**
+ * Load the text domain for translation of the plugin.
+ * Needs to be fired early on to catch all strings in the admin.
+ * 
+ * @since 2.1.1
+ */
+function simplehooks_load_translations() {
+
+	/** Set unique textdomain string */
+	$sh_textdomain = 'genesis-simple-hooks';
+
+	/** The 'plugin_locale' filter is also used by default in load_plugin_textdomain() */
+	$locale = apply_filters( 'plugin_locale', get_locale(), $sh_textdomain );
+
+	/** Set filter for WordPress languages directory */
+	$sh_wp_lang_dir = apply_filters(
+		'simplehooks_wp_lang_dir',
+		trailingslashit( WP_LANG_DIR ) . 'plugins/' . $sh_textdomain . '-' . $locale . '.mo'
+	);
+
+	/** We only need translations within wp-admin */
+	if ( is_admin() ) {
+
+		/** First, look in WordPress' "languages" folder (update-safe) */
+		load_textdomain(
+			$sh_textdomain,
+			$sh_wp_lang_dir
+		);
+
+		/** Secondly, look in plugin's "languages" (default) */
+		load_plugin_textdomain(
+			$sh_textdomain,
+			FALSE,
+			trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'languages'
+		);
+
+	}
+
+}
 
 register_activation_hook( __FILE__, 'simplehooks_activation' );
 /**
@@ -42,7 +86,7 @@ function simplehooks_activation() {
 function simplehooks_deactivate( $genesis_version = '2.1.0', $wp_version = '3.9.2' ) {
 	
 	deactivate_plugins( plugin_basename( __FILE__ ) );
-	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'simplehooks' ), $wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $genesis_version ) );
+	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'genesis-simple-hooks' ), $wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $genesis_version ) );
 	
 }
 
