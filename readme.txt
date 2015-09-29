@@ -3,8 +3,8 @@ Contributors: nathanrice, studiopress
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5553118
 Tags: hooks, genesis, genesiswp, studiopress
 Requires at least: 3.9.2
-Tested up to: 4.0.0
-Stable tag: 2.1.0
+Tested up to: 4.3.1
+Stable tag: 2.1.1
 
 This plugin creates a new Genesis settings page that allows you to insert code (HTML, Shortcodes, and PHP), and attach it to any of the 50+ action hooks throughout the Genesis Theme Framework, from StudioPress.
 
@@ -72,36 +72,30 @@ The most common request from Genesis users is how to properly modify their foote
 
 == Changelog ==
 
-= 0.1 =
-* Initial Release
+= 2.1.1 =
+* Generate POT file.
 
-= 0.9 =
-* Add new hooks, remove deprecated hooks
-* Fix textarea bug with HTML entities
-* Bump to pre-release 0.9 branch
+= 2.1.0 =
+* Increased requirement to Genesis 2.1.0.
+* Site title and description hooks.
+* Fixed outdated hook descriptions.
 
-= 1.2 =
-* Bump to match Genesis version
-* Require Genesis 1.2.1
-* Update hooks for Genesis 1.2.1
+= 2.0.1 =
+* Genesis 2.0 favicon unhook location fix.
 
-= 1.3.1 =
-* Bump to match Genesis version
-* Require Genesis 1.3.1
-* Added new unhook options
-* Fixed bug with foreign language compatibility
+= 2.0.0 =
+* Updated to use new entry hooks in Genesis 2.0.
+* Remove unused boxes.php file.
 
-= 1.3.1.1 =
-* Reduce requirement to Genesis 1.3
-* Increase requirement to WordPress 3.0
+= 1.8.0.2 =
+* Fixed yet another fatal error but for people using less than Genesis 1.8.0. It should now deactivate gracefully.
 
-= 1.4 =
-* Increased requirement to Genesis 1.4
-* Fixed undefined index bug in functions.php
+= 1.8.0.1 =
+* Removed an unnecessary version compare check that was causing some fatal errors.
 
-= 1.6 =
-* Increased requirement to Genesis 1.6
-* Fixed bug with things not unhooking
+= 1.8.0 =
+* Increased requirement to Genesis 1.8.0.
+* Switched over to the Genesis 1.8 admin menu class to build admin menu.
 
 = 1.7.1 =
 * Increased requirement to Genesis 1.7.1
@@ -109,24 +103,41 @@ The most common request from Genesis users is how to properly modify their foote
 * Added new hooks to the defaults array
 * Whitespace, standards, and documentation
 
-= 1.8.0 =
-* Increased requirement to Genesis 1.8.0.
-* Switched over to the Genesis 1.8 admin menu class to build admin menu.
+= 1.6 =
+* Increased requirement to Genesis 1.6
+* Fixed bug with things not unhooking
 
-= 1.8.0.1 =
-* Removed an unnecessary version compare check that was causing some fatal errors.
+= 1.4 =
+* Increased requirement to Genesis 1.4
+* Fixed undefined index bug in functions.php
 
-= 1.8.0.2 =
-* Fixed yet another fatal error but for people using less than Genesis 1.8.0. It should now deactivate gracefully.
+= 1.3.1.1 =
+* Reduce requirement to Genesis 1.3
+* Increase requirement to WordPress 3.0
 
-= 2.0.0 =
-* Updated to use new entry hooks in Genesis 2.0.
-* Remove unused boxes.php file.
+= 1.3.1 =
+* Bump to match Genesis version
+* Require Genesis 1.3.1
+* Added new unhook options
+* Fixed bug with foreign language compatibility
 
-= 2.0.1 =
-* Genesis 2.0 favicon unhook location fix.
+= 1.2 =
+* Bump to match Genesis version
+* Require Genesis 1.2.1
+* Update hooks for Genesis 1.2.1
 
-= 2.1.0 =
-* Increased requirement to Genesis 2.1.0.
-* Site title and description hooks.
-* Fixed outdated hook descriptions.
+= 0.9 =
+* Add new hooks, remove deprecated hooks
+* Fix textarea bug with HTML entities
+* Bump to pre-release 0.9 branch
+
+= 0.1 =
+* Initial Release
+
+
+
+
+
+
+
+

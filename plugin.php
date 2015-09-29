@@ -8,7 +8,7 @@
 	Author: Nathan Rice
 	Author URI: http://www.nathanrice.net/
 
-	Version: 2.1.0
+	Version: 2.1.1
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -42,7 +42,7 @@ function simplehooks_activation() {
 function simplehooks_deactivate( $genesis_version = '2.1.0', $wp_version = '3.9.2' ) {
 	
 	deactivate_plugins( plugin_basename( __FILE__ ) );
-	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'simplehooks' ), $wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $genesis_version ) );
+	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'genesis-simple-hooks' ), $wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $genesis_version ) );
 	
 }
 

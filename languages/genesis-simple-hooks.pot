@@ -1,0 +1,424 @@
+# Copyright (C) 2015 Nathan Rice
+# This file is distributed under the GNU General Public License v2.0 (or later).
+msgid ""
+msgstr ""
+"Project-Id-Version: Genesis Simple Hooks 2.1.1\n"
+"Report-Msgid-Bugs-To: StudioPress <translations@studiopress.com>\n"
+"POT-Creation-Date: 2015-09-29 20:13:39+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: StudioPress <translations@studiopress.com>\n"
+"Language-Team: English <translations@studiopress.com>\n"
+"X-Generator: grunt-wp-i18n 0.4.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+
+#: admin.php:30
+msgid "Genesis - Simple Hooks"
+msgstr ""
+
+#: admin.php:31
+msgid "Simple Hooks"
+msgstr ""
+
+#: admin.php:181
+msgid "WordPress Hooks"
+msgstr ""
+
+#: admin.php:182
+msgid "Document Hooks"
+msgstr ""
+
+#: admin.php:183
+msgid "Header Hooks"
+msgstr ""
+
+#: admin.php:184
+msgid "Content Hooks"
+msgstr ""
+
+#: admin.php:185
+msgid "Loop Hooks"
+msgstr ""
+
+#: admin.php:188
+msgid "Entry Hooks"
+msgstr ""
+
+#: admin.php:190
+msgid "Post/Page Hooks"
+msgstr ""
+
+#: admin.php:192
+msgid "Comment List Hooks"
+msgstr ""
+
+#: admin.php:193
+msgid "Ping List Hooks"
+msgstr ""
+
+#: admin.php:194
+msgid "Single Comment Hooks"
+msgstr ""
+
+#: admin.php:195
+msgid "Comment Form Hooks"
+msgstr ""
+
+#: admin.php:196
+msgid "Sidebar Hooks"
+msgstr ""
+
+#: admin.php:197
+msgid "Footer Hooks"
+msgstr ""
+
+#: admin.php:205
+msgid ""
+"This hook executes immediately before the closing "
+"<code>&lt;/head&gt;</code> tag."
+msgstr ""
+
+#: admin.php:211 admin.php:237
+msgid ""
+"This hook executes immediately before the closing "
+"<code>&lt;/body&gt;</code> tag."
+msgstr ""
+
+#: admin.php:214 admin.php:240 admin.php:274 admin.php:300 admin.php:334
+#: admin.php:365 admin.php:416 admin.php:470 admin.php:486 admin.php:508
+#: admin.php:566 admin.php:588
+msgid "Save Changes"
+msgstr ""
+
+#: admin.php:222
+msgid ""
+"This hook executes between the main document "
+"<code>&lt;title&gt;&lt;/title&gt;</code> tags."
+msgstr ""
+
+#: admin.php:227
+msgid ""
+"This hook executes in the document <code>&lt;head&gt;</code>.<br /> It is "
+"commonly used to output <code>META</code> information about the document."
+msgstr ""
+
+#: admin.php:232
+msgid ""
+"This hook executes immediately after the opening <code>&lt;body&gt;</code> "
+"tag."
+msgstr ""
+
+#: admin.php:248
+msgid "This hook executes immediately before the header."
+msgstr ""
+
+#: admin.php:253
+msgid "This hook outputs the default header."
+msgstr ""
+
+#: admin.php:259
+msgid "This hook executes immediately after the header."
+msgstr ""
+
+#: admin.php:264
+msgid ""
+"This hooks executes inside the header, and by default, outputs the site "
+"title."
+msgstr ""
+
+#: admin.php:270
+msgid ""
+"This hooks executes inside the header, and by default, outputs the site "
+"description."
+msgstr ""
+
+#: admin.php:282
+msgid ""
+"This hook executes immediately before the div block that wraps the content "
+"and the primary sidebar."
+msgstr ""
+
+#: admin.php:287
+msgid ""
+"This hook executes immediately after the div block that wraps the content "
+"and the primary sidebar."
+msgstr ""
+
+#: admin.php:292
+msgid "This hook executes immediately before the content column."
+msgstr ""
+
+#: admin.php:297
+msgid "This hook executes immediately after the content column."
+msgstr ""
+
+#: admin.php:308
+msgid ""
+"This hook executes immediately before all loop blocks.<br /> Therefore, "
+"this hook falls outside the loop, and cannot execute functions that require "
+"loop template tags or variables."
+msgstr ""
+
+#: admin.php:313
+msgid "This hook executes both default and custom loops."
+msgstr ""
+
+#: admin.php:319
+msgid ""
+"This hook executes immediately after all loop blocks.<br /> Therefore, this "
+"hook falls outside the loop, and cannot execute functions that require loop "
+"template tags or variables."
+msgstr ""
+
+#: admin.php:324
+msgid "This hook executes after the <code>endwhile;</code> statement."
+msgstr ""
+
+#: admin.php:330
+msgid ""
+"This hook executes after the <code>else :</code> statement in all loop "
+"blocks. The content attached to this hook will only display if there are no "
+"posts available when a loop is executed."
+msgstr ""
+
+#: admin.php:342
+msgid ""
+"This hook executes before each entry in all loop blocks (outside the entry "
+"markup element)."
+msgstr ""
+
+#: admin.php:347
+msgid ""
+"This hook executes before the entry content. By default, it outputs the "
+"entry title and meta information."
+msgstr ""
+
+#: admin.php:352
+msgid "This hook, by default, outputs the entry content."
+msgstr ""
+
+#: admin.php:357
+msgid ""
+"This hook executes after the entry content. By Default, it outputs entry "
+"meta information."
+msgstr ""
+
+#: admin.php:362
+msgid ""
+"This hook executes after each entry in all loop blocks (outside the entry "
+"markup element)."
+msgstr ""
+
+#: admin.php:373
+msgid ""
+"This hook executes before each post in all loop blocks (outside the "
+"<code>post_class()</code> div)."
+msgstr ""
+
+#: admin.php:378
+msgid ""
+"This hook executes after each post in all loop blocks (outside the "
+"<code>post_class()</code> div)."
+msgstr ""
+
+#: admin.php:384
+msgid "This hook executes immediately before each post/page title within the loop."
+msgstr ""
+
+#: admin.php:389
+msgid "This hook outputs the post/page title."
+msgstr ""
+
+#: admin.php:395
+msgid "This hook executes immediately after each post/page title within the loop."
+msgstr ""
+
+#: admin.php:400
+msgid ""
+"This hook executes immediately before the <code>genesis_post_content</code> "
+"hook for each post/page within the loop."
+msgstr ""
+
+#: admin.php:406
+msgid "This hook outputs the content of the post/page, by default."
+msgstr ""
+
+#: admin.php:412
+msgid ""
+"This hook executes immediately after the <code>genesis_post_content</code> "
+"hook for each post/page within the loop."
+msgstr ""
+
+#: admin.php:424
+msgid "This hook executes immediately before the comments block."
+msgstr ""
+
+#: admin.php:429
+msgid "This hook outputs the comments block."
+msgstr ""
+
+#: admin.php:435
+msgid ""
+"This hook executes inside the comments block. By default, it outputs a list "
+"of comments associated with a post via the "
+"<code>genesis_default_list_comments()</code> function."
+msgstr ""
+
+#: admin.php:441
+msgid "This hook executes immediately after the comments block."
+msgstr ""
+
+#: admin.php:450
+msgid "This hook executes immediately before the pings block."
+msgstr ""
+
+#: admin.php:456
+msgid "This hook outputs the pings block."
+msgstr ""
+
+#: admin.php:461
+msgid ""
+"This hook executes inside the pings block. By default, it outputs a list of "
+"pings associated with a post via the "
+"<code>genesis_default_list_pings()</code> function."
+msgstr ""
+
+#: admin.php:467
+msgid "This hook executes immediately after the pings block."
+msgstr ""
+
+#: admin.php:478
+msgid ""
+"This hook executes immediately before each individual comment (inside the "
+"<code>.comment</code> list item)."
+msgstr ""
+
+#: admin.php:483
+msgid ""
+"This hook executes immediately after each individual comment (inside the "
+"<code>.comment</code> list item)."
+msgstr ""
+
+#: admin.php:494
+msgid "This hook executes immediately before the comment form."
+msgstr ""
+
+#: admin.php:499
+msgid "This hook outputs the entire comment form."
+msgstr ""
+
+#: admin.php:505
+msgid "This hook executes immediately after the comment form."
+msgstr ""
+
+#: admin.php:516
+msgid "This hook executes immediately before the primary sidebar column."
+msgstr ""
+
+#: admin.php:521
+msgid ""
+"This hook outputs the content of the primary sidebar, including the widget "
+"area output."
+msgstr ""
+
+#: admin.php:527
+msgid "This hook executes immediately after the primary sidebar column."
+msgstr ""
+
+#: admin.php:532
+msgid "This hook executes immediately before the primary sidebar widget area."
+msgstr ""
+
+#: admin.php:537
+msgid "This hook executes immediately after the primary sidebar widget area."
+msgstr ""
+
+#: admin.php:542
+msgid "This hook executes immediately before the alternate sidebar column."
+msgstr ""
+
+#: admin.php:547
+msgid ""
+"This hook outputs the content of the secondary sidebar, including the "
+"widget area output."
+msgstr ""
+
+#: admin.php:553
+msgid "This hook executes immediately after the alternate sidebar column."
+msgstr ""
+
+#: admin.php:558
+msgid "This hook executes immediately before the alternate sidebar widget area."
+msgstr ""
+
+#: admin.php:563
+msgid "This hook executes immediately after the alternate sidebar widget area."
+msgstr ""
+
+#: admin.php:574
+msgid "This hook executes immediately before the footer."
+msgstr ""
+
+#: admin.php:579
+msgid "This hook, by default, outputs the content of the footer."
+msgstr ""
+
+#: admin.php:585
+msgid "This hook executes immediately after the footer."
+msgstr ""
+
+#: functions.php:45
+msgid "Hook"
+msgstr ""
+
+#: functions.php:54
+msgid "Unhook <code>%s()</code> function from this hook?"
+msgstr ""
+
+#: functions.php:65
+msgid "Execute Shortcodes on this hook?"
+msgstr ""
+
+#: functions.php:66
+msgid "Execute PHP on this hook?"
+msgstr ""
+
+#: plugin.php:45
+msgid ""
+"Sorry, you cannot run Simple Hooks without WordPress %s and <a "
+"href=\"%s\">Genesis %s</a>, or greater."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Genesis Simple Hooks"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.studiopress.com/plugins/simple-hooks"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the "
+"Genesis Theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Nathan Rice"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.nathanrice.net/"
+msgstr ""
