@@ -2,13 +2,16 @@
 /*
 	Plugin Name: Genesis Simple Hooks
 	Plugin URI: http://www.studiopress.com/plugins/simple-hooks
-	
+
 	Description: Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the Genesis Theme.
-	
+
 	Author: Nathan Rice
 	Author URI: http://www.nathanrice.net/
 
-	Version: 2.1.1
+	Version: 2.1.2
+
+	Text Domain: genesis-simple-hooks
+	Domain Path: /languages
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -40,10 +43,18 @@ function simplehooks_activation() {
  * @since 1.8.0.2
  */
 function simplehooks_deactivate( $genesis_version = '2.1.0', $wp_version = '3.9.2' ) {
-	
+
 	deactivate_plugins( plugin_basename( __FILE__ ) );
 	wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'genesis-simple-hooks' ), $wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $genesis_version ) );
-	
+
+}
+
+add_action( 'plugins_loaded', 'simplehooks_load_textdomain' );
+/**
+ * Load the plugin textdomain
+ */
+function simplehooks_load_textdomain() {
+	load_plugin_textdomain( 'genesis-simple-hooks', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 
 add_action( 'genesis_init', 'simplehooks_init', 20 );
@@ -57,10 +68,10 @@ function simplehooks_init() {
 	//* Admin Menu
 	if ( is_admin() )
 		require_once( SIMPLEHOOKS_PLUGIN_DIR . '/admin.php' );
-	
+
 	//* Helper functions
 	require_once( SIMPLEHOOKS_PLUGIN_DIR . '/functions.php' );
-	
+
 }
 
 add_action( 'genesis_init', 'simplehooks_execute_hooks', 20 );
