@@ -209,8 +209,16 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 				'description' => __( 'Executes as part of the entry. Genesis uses this hook to output the entry header.', 'genesis-simple-hooks' ),
 				'unhook'      => array( 'genesis_do_post_title' ),
 			),
+			'genesis_before_entry_content' => array(
+				'description' => __( 'Executes before the entry content', 'genesis-simple-hooks' ),
+				'unhook'      => array( 'genesis_do_post_content' ),
+			),
 			'genesis_entry_content' => array(
 				'description' => __( 'Executes as part of the entry. Genesis uses this hook to output the entry content.', 'genesis-simple-hooks' ),
+				'unhook'      => array( 'genesis_do_post_content' ),
+			),
+			'genesis_after_entry_content' => array(
+				'description' => __( 'Executes after the entry content', 'genesis-simple-hooks' ),
 				'unhook'      => array( 'genesis_do_post_content' ),
 			),
 			'genesis_entry_footer' => array(
