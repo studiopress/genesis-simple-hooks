@@ -67,9 +67,10 @@ class Genesis_Simple_Hooks {
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
 
 		$this->load_plugin_textdomain();
-		$this->includes();
-		$this->instantiate();
 
+		// Because this is a Genesis-dependent plugin
+		add_action( 'genesis_setup', array( $this, 'includes' ) );
+		add_action( 'genesis_setup', array( $this, 'instantiate' ) );
 		add_action( 'genesis_setup', array( $this, 'execute_hooks' ) );
 
 	}
