@@ -608,15 +608,3 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 	}
 
 }
-
-add_action( 'genesis_admin_menu', 'simplehooks_settings_menu' );
-/**
- * Instantiate the class to create the menu.
- *
- * @since 1.8.0
- */
-function simplehooks_settings_menu() {
-
-	new Genesis_Simple_Hooks_Admin;
-
-}

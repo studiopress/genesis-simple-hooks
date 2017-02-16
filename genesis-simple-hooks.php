@@ -205,7 +205,7 @@ class Genesis_Simple_Hooks {
 		$value = $shortcodes ? do_shortcode( $content ) : $content;
 
 		if ( $php ) {
-			eval( "?>$value<?php " );
+			eval( "?>$value " );
 		} else {
 			echo $value;
 		}

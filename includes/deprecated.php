@@ -13,18 +13,6 @@ function simplehooks_settings_menu() {
 }
 
 /**
- * Deprecated.
- *
- * @since 1.8.0
- * @deprecated 2.2.0
- */
-function simplehooks_settings_menu() {
-
-	_deprecated_function( __FUNCTION__, '2.2.0' );
-
-}
-
-/**
  * Deprecated. This function runs on plugin activation. It checks to make sure Genesis
  * or a Genesis child theme is active. If not, it deactivates itself.
  *
