@@ -97,6 +97,37 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 	}
 
 	/**
+	 * Save method. Allows for data manipulation and sanitization before saving.
+	 *
+	 * @since 2.2.0
+	 */
+	public function save( $newvalue, $oldvalue ) {
+
+		foreach ( $newvalue as $hook => $data ) {
+
+			if ( empty( $data ) ) {
+				continue;
+			}
+
+			if ( ! current_user_can( 'unfiltered_html' ) ) {
+
+				// kses post, if value of content changed.
+				if ( $newvalue[ $hook ]['content'] !== $oldvalue[ $hook ]['content'] ) {
+					$newvalue[ $hook ]['content'] = wp_kses_post( $data['content'] );
+				}
+
+				// Maintain php selection, since option is hidden for lower users.
+				$newvalue[ $hook ]['php'] = $oldvalue[ $hook ]['php'];
+
+			}
+
+		}
+
+		return $newvalue;
+
+	}
+
+	/**
 	 * Assign all our hooks to class variables.
 	 *
 	 * @since 2.2.0
@@ -479,12 +510,14 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 				__( 'Execute Shortcodes on this hook?', 'genesis-simple-hooks' )
 			);
 
-			printf(
-				'<input type="checkbox" name="%1$s" id="%1$s" value="1" %2$s/> <label for="%1$s">%3$s</label><br />',
-				$this->settings_field . "[{$hook}][php]",
-				checked( 1, simplehooks_get_option( $hook, 'php' ), 0 ),
-				__( 'Execute Shortcodes on this hook?', 'genesis-simple-hooks' )
-			);
+			if ( current_user_can( 'unfiltered_html' ) ) {
+				printf(
+					'<input type="checkbox" name="%1$s" id="%1$s" value="1" %2$s/> <label for="%1$s">%3$s</label><br />',
+					$this->settings_field . "[{$hook}][php]",
+					checked( 1, simplehooks_get_option( $hook, 'php' ), 0 ),
+					__( 'Execute PHP on this hook?', 'genesis-simple-hooks' )
+				);
+			}
 
 			echo '</p>';
 
