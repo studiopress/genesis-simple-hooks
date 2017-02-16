@@ -29,7 +29,7 @@
     "description": "Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the Genesis Theme.",
     "author": "StudioPress",
     "authoruri": "http://www.studiopress.com/",
-    "version": "2.1.2",
+    "version": "2.2.0",
     "license": "GPL-2.0+",
     "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
     "textdomain": "genesis-simple-hooks"
