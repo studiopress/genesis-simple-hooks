@@ -66,7 +66,7 @@ class Genesis_Simple_Hooks {
 
 		add_action( 'admin_notices', array( $this, 'requirements_notice' ) )
 
-		$this->load_plugin_textdomain();
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
 		// Because this is a Genesis-dependent plugin
 		add_action( 'genesis_setup', array( $this, 'includes' ) );
@@ -97,7 +97,7 @@ class Genesis_Simple_Hooks {
 	 * @since 2.2.0
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( $this->plugin_textdomain, false, $this->plugin_dir_path . 'languages/' );
+		load_plugin_textdomain( $this->plugin_textdomain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
