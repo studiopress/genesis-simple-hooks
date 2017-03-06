@@ -149,7 +149,7 @@ class Genesis_Simple_Hooks {
 		foreach ( (array) $hooks as $hook => $array ) {
 
 			// Add new content to hook
-			if ( $array['content'] ) {
+			if ( ! empty( $array['content'] ) ) {
 				add_action( $hook, array( $this, 'execute_hook' ) );
 			}
 
