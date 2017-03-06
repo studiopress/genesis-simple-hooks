@@ -453,13 +453,6 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 		// Just the keys
 		$hooks = array_keys( $hooks );
 
-		/**
-		 * An array of hooks that Genesis Simple Hooks supports.
-		 *
-		 * @since 2.2.0
-		 */
-		$hooks = apply_filters( 'genesis_simple_hooks_hooks', $hooks );
-
 		return $hooks;
 
 	}
