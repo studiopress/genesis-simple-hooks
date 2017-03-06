@@ -57,6 +57,17 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 	}
 
 	/**
+	 * Initialize.
+	 *
+	 * @since 2.1.0
+	 */
+	public function init() {
+
+		add_action( 'genesis_admin_menu', array( $this, 'admin_menu' ) );
+
+	}
+
+	/**
 	 * Create the admin menu item and settings page.
 	 *
 	 * @since 2.2.0

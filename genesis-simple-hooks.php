@@ -86,7 +86,7 @@ class Genesis_Simple_Hooks {
 
 			$action = defined( 'PARENT_THEME_VERSION' ) ? __( 'upgrade to', 'genesis-simple-hooks' ) : __( 'install and activate', 'genesis-simple-hooks' );
 
-			$message = sprintf( __( 'Genesis Simple Hooks requires WordPress %s and Genesis %s, or greater. Please %s the latest version of <a href="%s" target="_blank">Genesis</a> to use this plugin.', 'genesis-simple-hooks' ), $this->min_wp_version, $this->min_genesis_version, $action, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa' );
+			$message = sprintf( __( 'Genesis Simple Hooks requires WordPress %s and Genesis %s, or greater. Please %s the latest version of <a href="%s" target="_blank">Genesis</a> to use this plugin.', 'genesis-simple-' ), $this->min_wp_version, $this->min_genesis_version, $action, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa' );
 			echo '<div class="notice notice-warning"><p>' . $message . '</p></div>';
 
 		}
@@ -121,22 +121,12 @@ class Genesis_Simple_Hooks {
 	 */
 	public function instantiate() {
 
-		add_action( 'genesis_admin_menu', array( $this, 'admin_instantiate' ) );
-
-	}
-
-	/**
-	 * Instantiate any classes that depend on Genesis admin classes.
-	 *
-	 * @since 2.2.0
-	 */
-	public function admin_instantiate() {
-
 		require_once( $this->plugin_dir_path . 'includes/class-genesis-simple-hooks-admin.php' );
 		$this->admin = new Genesis_Simple_Hooks_Admin;
-		$this->admin->admin_menu();
+		$this->admin->init();
 
 	}
+
 	/**
 	 * Helper function to retrieve the static object without using globals.
 	 *
