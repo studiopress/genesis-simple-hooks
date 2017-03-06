@@ -64,7 +64,7 @@ class Genesis_Simple_Hooks {
 	 */
 	public function init() {
 
-		register_activation_hook( __FILE__, array( $this, 'activation' ) );
+		add_action( 'admin_notices', array( $this, 'requirements_notice' ) )
 
 		$this->load_plugin_textdomain();
 
@@ -76,16 +76,16 @@ class Genesis_Simple_Hooks {
 	}
 
 	/**
-	 * Plugin activation hook. Runs when plugin is activated.
+	 * Show admin notice if minimum requirements aren't met.
 	 *
 	 * @since 2.2.0
 	 */
-	public function activation() {
+	public function requirements_notice() {
 
 		if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, $this->min_genesis_version, '>=' ) ) {
 
-			deactivate_plugins( plugin_basename( __FILE__ ) );
-			wp_die( sprintf( __( 'Sorry, you cannot run Simple Hooks without WordPress %s and <a href="%s">Genesis %s</a>, or greater.', 'genesis-simple-hooks' ), $this->min_wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $this->min_genesis_version ) );
+			$message = sprintf( __( 'Genesis Simple Hooks requires WordPress %s and <a href="%s">Genesis %s</a>, or greater. Please upgrade or deactivate this plugin.', 'genesis-simple-sidebars' ), $this->min_wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $this->min_genesis_version );
+			echo '<div class="notice notice-warning"><p>' . $message . '</p></div>';
 
 		}
 
