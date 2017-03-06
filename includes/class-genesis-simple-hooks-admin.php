@@ -472,7 +472,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			}
 
 			printf( '<h4><code>%s</code> %s</h4>', esc_html( $hook ), __( 'Hook', 'genesis-simple-hooks' ) );
-			printf( '<p><span class="description">%s</span></p>', esc_html( $info['description'] ) );
+			printf( '<p><span class="description">%s</span></p>', $info['description'] );
 
 			if ( isset( $info['unhook'] ) ) {
 
