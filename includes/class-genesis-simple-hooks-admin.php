@@ -473,6 +473,11 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		foreach ( (array) $hooks as $hook => $info ) {
 
+			// Check for existence in hooks array
+			if ( ! in_array( $hook, $this->get_hooks() ) ) {
+				continue;
+			}
+
 			printf( '<h4><code>%s</code> %s</h4>', esc_html( $hook ), __( 'Hook', 'genesis-simple-hooks' ) );
 			printf( '<p><span class="description">%s</span></p>', esc_html( $info['description'] ) );
 

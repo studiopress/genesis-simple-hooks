@@ -64,7 +64,7 @@ class Genesis_Simple_Hooks {
 	 */
 	public function init() {
 
-		add_action( 'admin_notices', array( $this, 'requirements_notice' ) )
+		add_action( 'admin_notices', array( $this, 'requirements_notice' ) );
 
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
