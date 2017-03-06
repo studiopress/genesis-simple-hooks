@@ -478,15 +478,11 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 				foreach ( (array) $info['unhook'] as $function ) {
 					printf(
-						'<input type="checkbox" name="%s" id="%s" value="%s" %s/>',
+						'<label><input type="checkbox" name="%s" id="%s" value="%s" %s/> %s</label><br />',
 						$this->settings_field . "[{$hook}][unhook][]",
 						$this->settings_field . "[{$hook}][unhook][]",
 						$function,
-						in_array( $function, (array) simplehooks_get_option( $hook, 'unhook' ) ) ? 'checked' : ''
-					);
-					printf(
-						'<label for="%s">%s</label><br />',
-						$this->settings_field . "[{$hook}][unhook][]",
+						in_array( $function, (array) simplehooks_get_option( $hook, 'unhook' ) ) ? 'checked' : '',
 						sprintf( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), $function )
 					);
 				}
