@@ -84,7 +84,9 @@ class Genesis_Simple_Hooks {
 
 		if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, $this->min_genesis_version, '>=' ) ) {
 
-			$message = sprintf( __( 'Genesis Simple Hooks requires WordPress %s and <a href="%s">Genesis %s</a>, or greater. Please upgrade or deactivate this plugin.', 'genesis-simple-sidebars' ), $this->min_wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $this->min_genesis_version );
+			$action = defined( 'PARENT_THEME_VERSION' ) ? __( 'upgrade to', 'genesis-simple-sidebars' ) : __( 'install and activate', 'genesis-simple-sidebars' );
+
+			$message = sprintf( __( 'Genesis Simple Hooks requires WordPress %s and <a href="%s" target="_blank">Genesis %s</a>, or greater. Please %s the latest version of Genesis to use this plugin.', 'genesis-simple-sidebars' ), $this->min_wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $this->min_genesis_version, $action );
 			echo '<div class="notice notice-warning"><p>' . $message . '</p></div>';
 
 		}
