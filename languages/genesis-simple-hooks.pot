@@ -1,10 +1,10 @@
-# Copyright (C) 2017 Nathan Rice
-# This file is distributed under the GNU General Public License v2.0 (or later).
+# Copyright (C) 2017 
+# This file is distributed under the same license as the  package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Genesis Simple Hooks 2.2.0\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: StudioPress <translations@studiopress.com>\n"
-"POT-Creation-Date: 2017-02-15 19:29:10+00:00\n"
+"POT-Creation-Date: 2017-03-09 03:54:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,408 +24,402 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes\n"
 
-#: genesis-simple-hooks.php:104
-msgid ""
-"Sorry, you cannot run Simple Hooks without WordPress %s and <a "
-"href=\"%s\">Genesis %s</a>, or greater."
+#: genesis-simple-hooks.php:87
+msgid "upgrade to"
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:71
+#: genesis-simple-hooks.php:87
+msgid "install and activate"
+msgstr ""
+
+#: genesis-simple-hooks.php:89
+msgid ""
+"Genesis Simple Hooks requires WordPress %s and Genesis %s, or greater. "
+"Please %s the latest version of <a href=\"%s\" "
+"target=\"_blank\">Genesis</a> to use this plugin."
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:82
 msgid "Genesis - Simple Hooks"
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:72
+#: includes/class-genesis-simple-hooks-admin.php:83
 msgid "Simple Hooks"
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:108
+#: includes/class-genesis-simple-hooks-admin.php:150
 msgid "Executes immediately before the closing <code>&lt;/head&gt;</code> tag."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:112
-#: includes/class-genesis-simple-hooks-admin.php:134
+#: includes/class-genesis-simple-hooks-admin.php:154
+#: includes/class-genesis-simple-hooks-admin.php:176
 msgid "Executes immediately before the closing <code>&lt;/body&gt;</code> tag."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:119
+#: includes/class-genesis-simple-hooks-admin.php:161
 msgid "Executes in the document head. Genesis uses this to output the doctype."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:123
+#: includes/class-genesis-simple-hooks-admin.php:165
 msgid ""
 "Executes in the document head. Genesis uses this to output the document "
 "title."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:127
+#: includes/class-genesis-simple-hooks-admin.php:169
 msgid "Executes in the document head. Genesis uses this to output meta tags."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:131
+#: includes/class-genesis-simple-hooks-admin.php:173
 msgid "Executes immediately after the opening <code>&lt;body&gt;</code> tag."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:140
+#: includes/class-genesis-simple-hooks-admin.php:182
 msgid "Executes immediately before the header."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:143
+#: includes/class-genesis-simple-hooks-admin.php:185
 msgid "Genesis uses this hook to output the default header."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:147
+#: includes/class-genesis-simple-hooks-admin.php:189
 msgid "Executes inside the page header, immediately before the header widget area."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:150
+#: includes/class-genesis-simple-hooks-admin.php:192
 msgid "Executes immediately after the header."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:153
+#: includes/class-genesis-simple-hooks-admin.php:195
 msgid "Executes inside the header. Genesis uses this hook to output the site title."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:157
+#: includes/class-genesis-simple-hooks-admin.php:199
 msgid ""
 "Executes inside the header. Genesis uses this hook to output the site "
 "description."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:164
+#: includes/class-genesis-simple-hooks-admin.php:206
 msgid "Executes before the content-sidebar-wrap opening markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:167
+#: includes/class-genesis-simple-hooks-admin.php:209
 msgid "Executes after the content-sidebar-wrap closing markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:170
+#: includes/class-genesis-simple-hooks-admin.php:212
 msgid "Executes before the content opening markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:173
+#: includes/class-genesis-simple-hooks-admin.php:215
 msgid "Executes after the content closing markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:179
+#: includes/class-genesis-simple-hooks-admin.php:221
 msgid "Executes before the loop."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:182
+#: includes/class-genesis-simple-hooks-admin.php:224
 msgid "Executes in the content section. Genesis uses this hook to output the loop."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:186
+#: includes/class-genesis-simple-hooks-admin.php:228
 msgid "Executes after the loop."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:189
+#: includes/class-genesis-simple-hooks-admin.php:231
 msgid "Executes after the WordPress loop endwhile."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:193
+#: includes/class-genesis-simple-hooks-admin.php:235
 msgid "Executes in the loop's else statement."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:197
+#: includes/class-genesis-simple-hooks-admin.php:239
 msgid "Executes if the loop actions are reset."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:206
+#: includes/class-genesis-simple-hooks-admin.php:248
 msgid "Executes before the entry."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:209
+#: includes/class-genesis-simple-hooks-admin.php:251
 msgid ""
 "Executes as part of the entry. Genesis uses this hook to output the entry "
 "header."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:213
+#: includes/class-genesis-simple-hooks-admin.php:255
+msgid "Executes before the entry content"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:259
 msgid ""
 "Executes as part of the entry. Genesis uses this hook to output the entry "
 "content."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:217
+#: includes/class-genesis-simple-hooks-admin.php:263
+msgid "Executes after the entry content"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:267
 msgid ""
 "Executes as part of the entry. Genesis uses this hook to output the entry "
 "footer."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:221
+#: includes/class-genesis-simple-hooks-admin.php:271
 msgid "Executes after the entry."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:231
+#: includes/class-genesis-simple-hooks-admin.php:281
 msgid "Executes before the post opening markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:234
+#: includes/class-genesis-simple-hooks-admin.php:284
 msgid "Executes after the post closing markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:238
+#: includes/class-genesis-simple-hooks-admin.php:288
 msgid "Executes before the post title."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:242
+#: includes/class-genesis-simple-hooks-admin.php:292
 msgid ""
 "Executes as part of the post. Genesis uses this hook to output the post "
 "title."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:246
+#: includes/class-genesis-simple-hooks-admin.php:296
 msgid "Executes after the post title."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:249
+#: includes/class-genesis-simple-hooks-admin.php:299
 msgid "Executes before the post content."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:253
+#: includes/class-genesis-simple-hooks-admin.php:303
 msgid ""
 "Executes as part of the post. Genesis uses this hook to output the post "
 "content."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:257
+#: includes/class-genesis-simple-hooks-admin.php:307
 msgid "Executes after the post content."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:264
+#: includes/class-genesis-simple-hooks-admin.php:314
 msgid "Executes before the comments section opening markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:267
+#: includes/class-genesis-simple-hooks-admin.php:317
 msgid ""
 "Executes after an entry. Genesis uses this hook to output the comments "
 "section."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:271
+#: includes/class-genesis-simple-hooks-admin.php:321
 msgid ""
 "Executes in the comments section. Genesis uses this hook to output the "
 "comment list."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:275
+#: includes/class-genesis-simple-hooks-admin.php:325
 msgid "Executes after the comments section closing markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:278
+#: includes/class-genesis-simple-hooks-admin.php:328
 msgid "Executes before the pings section opening markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:281
+#: includes/class-genesis-simple-hooks-admin.php:331
 msgid "Executes after an entry. Genesis uses this hook to output the pings section."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:285
+#: includes/class-genesis-simple-hooks-admin.php:335
 msgid ""
 "Executes in the pings section. Genesis uses this hook to output the ping "
 "list."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:289
+#: includes/class-genesis-simple-hooks-admin.php:339
 msgid "Executes after the ping section closing markup."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:292
+#: includes/class-genesis-simple-hooks-admin.php:342
 msgid "Executes before a single comment."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:295
+#: includes/class-genesis-simple-hooks-admin.php:345
 msgid ""
 "Executes in the comment list. Genesis uses this hook to output a single "
 "comment."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:298
+#: includes/class-genesis-simple-hooks-admin.php:348
 msgid "Executes after a single comment."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:301
+#: includes/class-genesis-simple-hooks-admin.php:351
 msgid "Executes before the comment form."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:304
+#: includes/class-genesis-simple-hooks-admin.php:354
 msgid ""
 "Executes after the comment and ping list. Genesis uses this hook to output "
 "the comment form."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:308
+#: includes/class-genesis-simple-hooks-admin.php:358
 msgid "Executes after the comment form."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:314
+#: includes/class-genesis-simple-hooks-admin.php:364
 msgid "Executes before the primary sidebar."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:317
+#: includes/class-genesis-simple-hooks-admin.php:367
 msgid ""
 "Executes after the content section in 2+ column layouts. Genesis uses this "
 "hook to output the primary sidebar."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:321
+#: includes/class-genesis-simple-hooks-admin.php:371
 msgid "Executes after the primary sidebar."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:324
+#: includes/class-genesis-simple-hooks-admin.php:374
 msgid "Executes before the primary sidebar widget area."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:327
+#: includes/class-genesis-simple-hooks-admin.php:377
 msgid "Executes after the primary sidebar widget area."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:330
+#: includes/class-genesis-simple-hooks-admin.php:380
 msgid "Executes before the secondary sidebar."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:333
+#: includes/class-genesis-simple-hooks-admin.php:383
 msgid ""
 "Executes after the primary sidebar in 3+ column layouts. Genesis uses this "
 "hook to output the secondary sidebar."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:337
+#: includes/class-genesis-simple-hooks-admin.php:387
 msgid "Executes after the secondary sidebar."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:340
+#: includes/class-genesis-simple-hooks-admin.php:390
 msgid "Executes before the secondary sidebar widget area."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:343
+#: includes/class-genesis-simple-hooks-admin.php:393
 msgid "Executes after the secondary sidebar widget area."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:349
+#: includes/class-genesis-simple-hooks-admin.php:399
 msgid "Executes before the site footer."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:352
+#: includes/class-genesis-simple-hooks-admin.php:402
 msgid ""
 "Executes after the content and sidebars. Genesis uses this hook to output "
 "the site footer."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:356
+#: includes/class-genesis-simple-hooks-admin.php:406
 msgid "Executes after the site footer."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:362
+#: includes/class-genesis-simple-hooks-admin.php:412
 msgid "Executes after the form on the the import/export screen."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:365
+#: includes/class-genesis-simple-hooks-admin.php:415
 msgid "Executes during the export function."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:368
+#: includes/class-genesis-simple-hooks-admin.php:418
 msgid "Executes during the import function."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:371
+#: includes/class-genesis-simple-hooks-admin.php:421
 msgid "Executes in the function that adds metaboxes to the theme settings screen."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:374
+#: includes/class-genesis-simple-hooks-admin.php:424
 msgid "Executes after Genesis upgrades itself."
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:437 includes/functions.php:45
+#: includes/class-genesis-simple-hooks-admin.php:485
 msgid "Hook"
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:453 includes/functions.php:54
+#: includes/class-genesis-simple-hooks-admin.php:497
 msgid "Unhook <code>%s()</code> function from this hook?"
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:471
-#: includes/class-genesis-simple-hooks-admin.php:478 includes/functions.php:65
+#: includes/class-genesis-simple-hooks-admin.php:515
 msgid "Execute Shortcodes on this hook?"
 msgstr ""
 
-#: includes/class-genesis-simple-hooks-admin.php:497
-msgid "WordPress Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:498
-msgid "Document Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:499
-msgid "Header Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:500
-msgid "Content Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:501
-msgid "Loop Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:504
-msgid "Entry Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:506
-msgid "Post/Page Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:508
-msgid "Comment Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:509
-msgid "Sidebar Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:510
-msgid "Footer Hooks"
-msgstr ""
-
-#: includes/class-genesis-simple-hooks-admin.php:518
-#: includes/class-genesis-simple-hooks-admin.php:526
-#: includes/class-genesis-simple-hooks-admin.php:534
-#: includes/class-genesis-simple-hooks-admin.php:542
-#: includes/class-genesis-simple-hooks-admin.php:550
-#: includes/class-genesis-simple-hooks-admin.php:558
-#: includes/class-genesis-simple-hooks-admin.php:566
-#: includes/class-genesis-simple-hooks-admin.php:574
-#: includes/class-genesis-simple-hooks-admin.php:582
-#: includes/class-genesis-simple-hooks-admin.php:590
-#: includes/class-genesis-simple-hooks-admin.php:598
-msgid "Save Changes"
-msgstr ""
-
-#: includes/functions.php:66
+#: includes/class-genesis-simple-hooks-admin.php:523
 msgid "Execute PHP on this hook?"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "Genesis Simple Hooks"
+#: includes/class-genesis-simple-hooks-admin.php:543
+msgid "WordPress Hooks"
 msgstr ""
 
-#. Plugin URI of the plugin/theme
-msgid "http://www.studiopress.com/plugins/simple-hooks"
+#: includes/class-genesis-simple-hooks-admin.php:544
+msgid "Document Hooks"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid ""
-"Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the "
-"Genesis Theme."
+#: includes/class-genesis-simple-hooks-admin.php:545
+msgid "Header Hooks"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Nathan Rice"
+#: includes/class-genesis-simple-hooks-admin.php:546
+msgid "Content Hooks"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://www.nathanrice.net/"
+#: includes/class-genesis-simple-hooks-admin.php:547
+msgid "Loop Hooks"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:550
+msgid "Entry Hooks"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:552
+msgid "Post/Page Hooks"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:554
+msgid "Comment Hooks"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:555
+msgid "Sidebar Hooks"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:556
+msgid "Footer Hooks"
+msgstr ""
+
+#: includes/class-genesis-simple-hooks-admin.php:564
+#: includes/class-genesis-simple-hooks-admin.php:572
+#: includes/class-genesis-simple-hooks-admin.php:580
+#: includes/class-genesis-simple-hooks-admin.php:588
+#: includes/class-genesis-simple-hooks-admin.php:596
+#: includes/class-genesis-simple-hooks-admin.php:604
+#: includes/class-genesis-simple-hooks-admin.php:612
+#: includes/class-genesis-simple-hooks-admin.php:620
+#: includes/class-genesis-simple-hooks-admin.php:628
+#: includes/class-genesis-simple-hooks-admin.php:636
+#: includes/class-genesis-simple-hooks-admin.php:644
+msgid "Save Changes"
 msgstr ""
