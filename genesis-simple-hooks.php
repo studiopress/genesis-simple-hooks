@@ -84,7 +84,7 @@ class Genesis_Simple_Hooks {
 
 		if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, $this->min_genesis_version, '>=' ) ) {
 
-			$plugin = get_plugin_data( __FILE__ );
+			$plugin = get_plugin_data( $this->plugin_dir_path . 'plugin.php' );
 
 			$action = defined( 'PARENT_THEME_VERSION' ) ? __( 'upgrade to', 'plugin-boilerplate' ) : __( 'install and activate', 'plugin-boilerplate' );
 
