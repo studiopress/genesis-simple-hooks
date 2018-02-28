@@ -103,7 +103,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 
 		// Load parent scripts as well as Genesis admin scripts */
 		parent::scripts();
-		genesis_load_admin_js();
+		genesis_scripts()->enqueue_and_localize_admin_scripts();
 
 	}
 
