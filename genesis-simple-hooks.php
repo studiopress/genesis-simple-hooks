@@ -5,7 +5,7 @@ class Genesis_Simple_Hooks {
 	/**
 	 * Plugin version
 	 */
-	public $plugin_version = '2.2.0';
+	public $plugin_version = '2.2.1';
 
 	/**
 	 * Minimum WordPress version.
@@ -70,7 +70,7 @@ class Genesis_Simple_Hooks {
 
 		// Because this is a Genesis-dependent plugin
 		add_action( 'genesis_setup', array( $this, 'includes' ) );
-		add_action( 'genesis_setup', array( $this, 'instantiate' ) );
+		add_action( 'genesis_admin_init', array( $this, 'instantiate' ) );
 		add_action( 'genesis_setup', array( $this, 'execute_hooks' ) );
 
 	}

@@ -5,10 +5,10 @@ Plugin URI: http://www.studiopress.com/plugins/simple-hooks
 
 Description: Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the Genesis Theme.
 
-Author: Nathan Rice
-Author URI: http://www.nathanrice.net/
+Author: StudioPress
+Author URI: http://www.studiopress.com/
 
-Version: 2.2.0
+Version: 2.2.1
 
 Text Domain: genesis-simple-hooks
 Domain Path: /languages
