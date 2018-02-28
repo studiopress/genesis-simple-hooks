@@ -5,7 +5,7 @@ class Genesis_Simple_Hooks {
 	/**
 	 * Plugin version
 	 */
-	public $plugin_version = '2.2.0';
+	public $plugin_version = '2.2.1';
 
 	/**
 	 * Minimum WordPress version.

@@ -8,7 +8,7 @@ Description: Genesis Simple Hooks allows you easy access to the 50+ Action Hooks
 Author: StudioPress
 Author URI: http://www.studiopress.com/
 
-Version: 2.2.0
+Version: 2.2.1
 
 Text Domain: genesis-simple-hooks
 Domain Path: /languages
