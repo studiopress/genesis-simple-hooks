@@ -151,7 +151,13 @@ class Genesis_Simple_Hooks {
 			if ( isset( $array['unhook'] ) ) {
 
 				foreach( (array) $array['unhook'] as $function ) {
-					remove_action( $hook, $function );
+					$function = explode( ',', $function );
+					if ( !isset( $function[1] ) ) {
+						remove_action( $hook, $function[0] );
+					}
+					else {
+						remove_action( $hook, $function[0], $function[1] );
+					}
 				}
 
 			}

@@ -253,7 +253,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			),
 			'genesis_before_entry_content' => array(
 				'description' => __( 'Executes before the entry content', 'genesis-simple-hooks' ),
-				'unhook'      => array( 'genesis_do_post_content' ),
+				'unhook'      => array( array( 'genesis_do_post_image', 8 ), 'genesis_do_post_content' ),
 			),
 			'genesis_entry_content' => array(
 				'description' => __( 'Executes as part of the entry. Genesis uses this hook to output the entry content.', 'genesis-simple-hooks' ),
@@ -269,7 +269,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			),
 			'genesis_after_entry' => array(
 				'description' => __( 'Executes after the entry.', 'genesis-simple-hooks' ),
-				'unhook'      => array( 'genesis_adjacent_entry_nav', 'genesis_get_comments_template' ),
+				'unhook'      => array( array( 'genesis_do_author_box_single', 8 ), 'genesis_adjacent_entry_nav', 'genesis_get_comments_template' ),
 			),
 		);
 
@@ -290,7 +290,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			),
 			'genesis_post_title' => array(
 				'description' => __( 'Executes as part of the post. Genesis uses this hook to output the post title.', 'genesis-simple-hooks' ),
-				'unhook'      => array( 'genesis_do_post_title' ),
+				'unhook'      => array( 'genesis_do_post_title', array( 'genesis_post_info', 12 ) ),
 			),
 			'genesis_after_post_title' => array(
 				'description' => __( 'Executes after the post title.', 'genesis-simple-hooks' ),
@@ -488,13 +488,21 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			if ( isset( $info['unhook'] ) ) {
 
 				foreach ( (array) $info['unhook'] as $function ) {
+					if ( is_array( $function ) ) {
+						$function_name = $function[0];
+						$function = implode( ',', $function );
+					}
+					else {
+						$function_name = $function;
+					}
+
 					printf(
 						'<label><input type="checkbox" name="%s" id="%s" value="%s" %s/> %s</label><br />',
 						$this->settings_field . "[{$hook}][unhook][]",
-						$this->settings_field . "[{$hook}][unhook][]",
+						$this->settings_field . "[{$hook}][unhook][" . $function_name . "]",
 						$function,
 						in_array( $function, (array) simplehooks_get_option( $hook, 'unhook' ) ) ? 'checked' : '',
-						sprintf( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), $function )
+						sprintf( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), $function_name )
 					);
 				}
 
