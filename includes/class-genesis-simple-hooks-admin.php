@@ -571,8 +571,8 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 				continue;
 			}
 
-			printf( '<h4><code>%s</code> %s</h4>', esc_html( $hook ), __( 'Hook', 'genesis-simple-hooks' ) );
-			printf( '<p><span class="description">%s</span></p>', $info['description'] );
+			printf( '<h4><code>%s</code> %s</h4>', esc_html( $hook ), esc_html( __( 'Hook', 'genesis-simple-hooks' ) ) );
+			printf( '<p><span class="description">%s</span></p>', esc_html( $info['description'] ) );
 
 			if ( isset( $info['unhook'] ) ) {
 
@@ -583,32 +583,33 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 						$this->settings_field . "[{$hook}][unhook][]",
 						$function,
 						in_array( $function, (array) simplehooks_get_option( $hook, 'unhook' ) ) ? 'checked' : '',
-						sprintf( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), $function )
+						// Translators: String is the name of a function.
+						sprintf( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), esc_html( $function ) )
 					);
 				}
 			}
 
 			printf(
 				'<p><textarea name="%s" cols="70" rows="5">%s</textarea></p>',
-				$this->settings_field . "[{$hook}][content]",
-				htmlentities( simplehooks_get_option( $hook, 'content' ), ENT_QUOTES, 'UTF-8' )
+				esc_attr( $this->settings_field . "[{$hook}][content]" ),
+				esc_html( htmlentities( simplehooks_get_option( $hook, 'content' ), ENT_QUOTES, 'UTF-8' ) )
 			);
 
 			echo '<p>';
 
 			printf(
 				'<input type="checkbox" name="%1$s" id="%1$s" value="1" %2$s/> <label for="%1$s">%3$s</label><br />',
-				$this->settings_field . "[{$hook}][shortcodes]",
+				esc_attr( $this->settings_field . "[{$hook}][shortcodes]" ),
 				checked( 1, simplehooks_get_option( $hook, 'shortcodes' ), 0 ),
-				__( 'Execute Shortcodes on this hook?', 'genesis-simple-hooks' )
+				esc_html( __( 'Execute Shortcodes on this hook?', 'genesis-simple-hooks' ) )
 			);
 
 			if ( current_user_can( 'unfiltered_html' ) ) {
 				printf(
 					'<input type="checkbox" name="%1$s" id="%1$s" value="1" %2$s/> <label for="%1$s">%3$s</label><br />',
-					$this->settings_field . "[{$hook}][php]",
+					esc_attr( $this->settings_field . "[{$hook}][php]" ),
 					checked( 1, simplehooks_get_option( $hook, 'php' ), 0 ),
-					__( 'Execute PHP on this hook?', 'genesis-simple-hooks' )
+					esc_html( __( 'Execute PHP on this hook?', 'genesis-simple-hooks' ) )
 				);
 			}
 
