@@ -1,4 +1,9 @@
 <?php
+/**
+ * A deprecated instance of simple hooks
+ *
+ * @package genesis-simple-hooks
+ */
 
 /**
  * Deprecated. Instantiate the admin menu.

@@ -1,44 +1,82 @@
 <?php
+/**
+ * This file handles the creation of the Simple Hooks admin menu.
+ *
+ * @package genesis-simple-hooks
+ */
 
+/**
+ * Plugin Name: Genesis Simple Hooks
+ * Plugin URI: http://www.studiopress.com/plugins/simple-hooks
+ *
+ * Description: Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the Genesis Theme.
+ *
+ * Author: StudioPress
+ * Author URI: http://www.studiopress.com/
+ *
+ * Version: 2.2.1
+ *
+ * Text Domain: genesis-simple-hooks
+ * Domain Path: /languages
+ *
+ * License: GNU General Public License v2.0 (or later)
+ * License URI: http://www.opensource.org/licenses/gpl-license.php
+ */
 class Genesis_Simple_Hooks {
 
 	/**
 	 * Plugin version
+	 *
+	 * @var $plugin_version The plugin version
 	 */
 	public $plugin_version = '2.2.1';
 
 	/**
 	 * Minimum WordPress version.
+	 *
+	 * @var $min_wp_version The minimum WordPress version
 	 */
 	public $min_wp_version = '4.7.2';
 
 	/**
 	 * Minimum Genesis version.
+	 *
+	 * @var $min_wp_version The minimum WordPress version
 	 */
 	public $min_genesis_version = '2.5.0';
 
 	/**
 	 * The plugin textdomain, for translations.
+	 *
+	 * @var $plugin_textdomain The plugin text domain
 	 */
 	public $plugin_textdomain = 'genesis-simple-hooks';
 
 	/**
 	 * The url to the plugin directory.
+	 *
+	 * @var $plugin_dir_url The plugin directory url
 	 */
 	public $plugin_dir_url;
 
 	/**
 	 * The path to the plugin directory.
+	 *
+	 * @var $plugin_dir_path The plugin directory path
 	 */
 	public $plugin_dir_path;
 
 	/**
 	 * The main settings field for this plugin.
+	 *
+	 * @var $settings_field The minimum settings field
 	 */
 	public $settings_field = 'simplehooks-settings';
 
 	/**
 	 * Admin menu and settings page.
+	 *
+	 * @var $admin The minimum WordPress version
 	 */
 	public $admin;
 
@@ -52,7 +90,7 @@ class Genesis_Simple_Hooks {
 		$this->plugin_dir_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_dir_path = plugin_dir_path( __FILE__ );
 
-		// For backward compatibility
+		// For backward compatibility.
 		define( 'SIMPLEHOOKS_PLUGIN_DIR', $this->plugin_dir_path );
 
 	}
@@ -68,7 +106,7 @@ class Genesis_Simple_Hooks {
 
 		add_action( 'admin_notices', array( $this, 'requirements_notice' ) );
 
-		// Because this is a Genesis-dependent plugin
+		// Because this is a Genesis-dependent plugin.
 		add_action( 'genesis_setup', array( $this, 'includes' ) );
 		add_action( 'genesis_admin_init', array( $this, 'instantiate' ) );
 		add_action( 'genesis_setup', array( $this, 'execute_hooks' ) );
@@ -88,8 +126,8 @@ class Genesis_Simple_Hooks {
 
 			$action = defined( 'PARENT_THEME_VERSION' ) ? __( 'upgrade to', 'plugin-boilerplate' ) : __( 'install and activate', 'plugin-boilerplate' );
 
-			$message = sprintf( __( '%s requires WordPress %s and <a href="%s" target="_blank">Genesis %s</a>, or greater. Please %s the latest version of Genesis to use this plugin.', 'plugin-boilerplate' ), $plugin['Name'], $this->min_wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $this->min_genesis_version, $action );
-			echo '<div class="notice notice-warning"><p>' . $message . '</p></div>';
+			$message = sprintf( __( '%1$s requires WordPress %2$s and <a href="%3$s" target="_blank">Genesis %4$s</a>, or greater. Please %5$s the latest version of Genesis to use this plugin.', 'plugin-boilerplate' ), $plugin['Name'], $this->min_wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $this->min_genesis_version, $action );
+			echo '<div class="notice notice-warning"><p>' . esc_html( $message ) . '</p></div>';
 
 		}
 
@@ -111,8 +149,8 @@ class Genesis_Simple_Hooks {
 	 */
 	public function includes() {
 
-		require_once( $this->plugin_dir_path . 'includes/functions.php' );
-		require_once( $this->plugin_dir_path . 'includes/deprecated.php' );
+		require_once $this->plugin_dir_path . 'includes/functions.php';
+		require_once $this->plugin_dir_path . 'includes/deprecated.php';
 
 	}
 
@@ -123,8 +161,8 @@ class Genesis_Simple_Hooks {
 	 */
 	public function instantiate() {
 
-		require_once( $this->plugin_dir_path . 'includes/class-genesis-simple-hooks-admin.php' );
-		$this->admin = new Genesis_Simple_Hooks_Admin;
+		require_once $this->plugin_dir_path . 'includes/class-genesis-simple-hooks-admin.php';
+		$this->admin = new Genesis_Simple_Hooks_Admin();
 		$this->admin->init();
 
 	}
@@ -138,24 +176,21 @@ class Genesis_Simple_Hooks {
 
 		$hooks = get_option( $this->settings_field );
 
-		//print_r( $hooks );
-
+		// print_r( $hooks );
 		foreach ( (array) $hooks as $hook => $array ) {
 
-			// Add new content to hook
+			// Add new content to hook.
 			if ( ! empty( $array['content'] ) ) {
 				add_action( $hook, array( $this, 'execute_hook' ) );
 			}
 
-			// Unhook stuff
+			// Unhook stuff.
 			if ( isset( $array['unhook'] ) ) {
 
-				foreach( (array) $array['unhook'] as $function ) {
+				foreach ( (array) $array['unhook'] as $function ) {
 					remove_action( $hook, $function );
 				}
-
 			}
-
 		}
 
 	}
@@ -201,13 +236,13 @@ function Genesis_Simple_Hooks() {
 
 	static $object;
 
-	if ( null == $object ) {
-		$object = new Genesis_Simple_Hooks;
+	if ( null === $object ) {
+		$object = new Genesis_Simple_Hooks();
 	}
 
 	return $object;
 }
 /**
- * Initialize the object on	`plugins_loaded`.
+ * Initialize the object on `plugins_loaded`.
  */
 add_action( 'plugins_loaded', array( Genesis_Simple_Hooks(), 'init' ) );
