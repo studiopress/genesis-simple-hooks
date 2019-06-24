@@ -177,7 +177,6 @@ class Genesis_Simple_Hooks {
 
 		$hooks = get_option( $this->settings_field );
 
-		// print_r( $hooks );
 		foreach ( (array) $hooks as $hook => $array ) {
 
 			// Add new content to hook.

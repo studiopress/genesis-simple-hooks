@@ -567,7 +567,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 		foreach ( (array) $hooks as $hook => $info ) {
 
 			// Check for existence in hooks array.
-			if ( ! in_array( $hook, $this->get_hooks() ) ) {
+			if ( ! in_array( $hook, $this->get_hooks(), true ) ) {
 				continue;
 			}
 
@@ -575,16 +575,21 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			printf( '<p><span class="description">%s</span></p>', esc_html( $info['description'] ) );
 
 			if ( isset( $info['unhook'] ) ) {
-
+				$allowed_html = array(
+					'a' => array(
+						'href'   => array(),
+						'target' => array(),
+					),
+				);
 				foreach ( (array) $info['unhook'] as $function ) {
 					printf(
 						'<label><input type="checkbox" name="%s" id="%s" value="%s" %s/> %s</label><br />',
 						$this->settings_field . "[{$hook}][unhook][]",
 						$this->settings_field . "[{$hook}][unhook][]",
 						$function,
-						in_array( $function, (array) simplehooks_get_option( $hook, 'unhook' ) ) ? 'checked' : '',
-						// Translators: String is the name of a function.
-						sprintf( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), esc_html( $function ) )
+						in_array( $function, (array) simplehooks_get_option( $hook, 'unhook' ), true ) ? 'checked' : '',
+						// Translators: The string is the name of a function.
+						sprintf( wp_kses( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), esc_html( $function ), $allowed_html ) )
 					);
 				}
 			}
