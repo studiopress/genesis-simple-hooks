@@ -1,8 +1,8 @@
 {
-	"name": "studiopress/genesis-simple-edits",
+	"name": "studiopress/genesis-simple-hooks",
 	"type": "wordpress-plugin",
-	"description": "This plugin lets you edit the the post-info (byline), the post-meta, and the footer area in a Genesis Theme.",
-	"homepage": "https://github.com/studiopress/genesis-simple-edits",
+	"description": "This plugin creates a new Genesis settings page that allows you to insert code (HTML, Shortcodes, and PHP), and attach it to any of the 50+ action hooks throughout the Genesis Theme Framework, from StudioPress.",
+	"homepage": "https://github.com/studiopress/genesis-simple-hooks",
 	"license": "GPL-2.0-or-later",
 	"require": {
 		"php": "^5.3 || ^7",
@@ -26,7 +26,7 @@
 		"phpcbf": "phpcbf --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./"
 	},
 	"support": {
-		"issues": "https://github.com/studiopress/genesis-simple-edits/issues",
-		"source": "https://github.com/studiopress/genesis-simple-edits"
+		"issues": "https://github.com/studiopress/genesis-simple-hooks/issues",
+		"source": "https://github.com/studiopress/genesis-simple-hooks"
 	}
 }
