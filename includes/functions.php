@@ -43,6 +43,7 @@ function simplehooks_get_option( $hook = null, $field = null, $all = false ) {
  */
 function simplehooks_option( $hook = null, $field = null ) {
 
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	echo simplehooks_get_option( $hook, $field );
 
 }

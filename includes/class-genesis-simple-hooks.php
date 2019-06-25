@@ -218,6 +218,7 @@ class Genesis_Simple_Hooks {
 		$value = $shortcodes ? do_shortcode( $content ) : $content;
 
 		if ( $php ) {
+			//phpcs:ignore
 			eval( "?>$value " );
 		} else {
 			echo esc_html( $value );

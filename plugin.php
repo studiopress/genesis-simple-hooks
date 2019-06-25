@@ -1,10 +1,4 @@
-<?php
-/**
- * Genesis Simple Hooks
- *
- * @package genesis-simple-hooks
- */
-
+<?php //phpcs:ignore
 /**
  * Plugin Name: Genesis Simple Hooks
  * Plugin URI: http://www.studiopress.com/plugins/simple-hooks
