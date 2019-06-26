@@ -589,7 +589,7 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 						$function,
 						in_array( $function, (array) simplehooks_get_option( $hook, 'unhook' ), true ) ? 'checked' : '',
 						// Translators: The string is the name of a function.
-						sprintf( wp_kses( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), esc_html( $function ), $allowed_html ) )
+						sprintf( wp_kses( __( 'Unhook <code>%s()</code> function from this hook?', 'genesis-simple-hooks' ), $allowed_html ), esc_html( $function ) )
 					);
 				}
 			}

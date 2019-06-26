@@ -150,8 +150,8 @@ class Genesis_Simple_Hooks {
 	 */
 	public function includes() {
 
-		require_once $this->plugin_dir_path . 'includes/functions.php';
-		require_once $this->plugin_dir_path . 'includes/deprecated.php';
+		require_once $this->plugin_dir_path . 'functions.php';
+		require_once $this->plugin_dir_path . 'deprecated.php';
 
 	}
 
@@ -162,7 +162,7 @@ class Genesis_Simple_Hooks {
 	 */
 	public function instantiate() {
 
-		require_once $this->plugin_dir_path . 'includes/class-genesis-simple-hooks-admin.php';
+		require_once $this->plugin_dir_path . 'class-genesis-simple-hooks-admin.php';
 		$this->admin = new Genesis_Simple_Hooks_Admin();
 		$this->admin->init();
 
