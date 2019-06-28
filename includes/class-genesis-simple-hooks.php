@@ -29,7 +29,7 @@ class Genesis_Simple_Hooks {
 	 *
 	 * @var $plugin_version The plugin version
 	 */
-	public $plugin_version = '2.2.1';
+	public $plugin_version = GENESIS_SIMPLE_HOOKS_VERSION;
 
 	/**
 	 * Minimum WordPress version.
@@ -221,7 +221,7 @@ class Genesis_Simple_Hooks {
 			//phpcs:ignore
 			eval( "?>$value " );
 		} else {
-			echo esc_html( $value );
+			echo ( $value );
 		}
 
 	}

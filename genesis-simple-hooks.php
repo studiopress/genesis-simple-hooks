@@ -7,6 +7,7 @@
 
 define( 'GENESIS_SIMPLE_HOOKS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GENESIS_SIMPLE_HOOKS_URL', plugins_url( '', __FILE__ ) );
+define( 'GENESIS_SIMPLE_HOOKS_VERSION', '2.2.1' );
 
 require_once GENESIS_SIMPLE_HOOKS_DIR . '/includes/class-genesis-simple-hooks.php';
 
