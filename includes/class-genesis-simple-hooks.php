@@ -221,6 +221,7 @@ class Genesis_Simple_Hooks {
 			//phpcs:ignore
 			eval( "?>$value " );
 		} else {
+			//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo ( $value );
 		}
 
