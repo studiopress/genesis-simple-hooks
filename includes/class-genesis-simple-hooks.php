@@ -87,8 +87,8 @@ class Genesis_Simple_Hooks {
 	 */
 	public function __construct() {
 
-		$this->plugin_dir_url  = plugin_dir_url( __FILE__ );
-		$this->plugin_dir_path = plugin_dir_path( __FILE__ );
+		$this->plugin_dir_url  = GENESIS_SIMPLE_HOOKS_URL;
+		$this->plugin_dir_path = GENESIS_SIMPLE_HOOKS_DIR;
 
 		// For backward compatibility.
 		define( 'SIMPLEHOOKS_PLUGIN_DIR', $this->plugin_dir_path );
@@ -122,7 +122,7 @@ class Genesis_Simple_Hooks {
 
 		if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, $this->min_genesis_version, '>=' ) ) {
 
-			$plugin = get_plugin_data( $this->plugin_dir_path . 'plugin.php' );
+			$plugin = get_plugin_data( $this->plugin_dir_path . 'includes/plugin.php' );
 
 			$action = defined( 'PARENT_THEME_VERSION' ) ? __( 'upgrade to', 'plugin-boilerplate' ) : __( 'install and activate', 'plugin-boilerplate' );
 
@@ -150,8 +150,8 @@ class Genesis_Simple_Hooks {
 	 */
 	public function includes() {
 
-		require_once $this->plugin_dir_path . 'functions.php';
-		require_once $this->plugin_dir_path . 'deprecated.php';
+		require_once $this->plugin_dir_path . 'includes/functions.php';
+		require_once $this->plugin_dir_path . 'includes/deprecated.php';
 
 	}
 
@@ -162,7 +162,7 @@ class Genesis_Simple_Hooks {
 	 */
 	public function instantiate() {
 
-		require_once $this->plugin_dir_path . 'class-genesis-simple-hooks-admin.php';
+		require_once $this->plugin_dir_path . 'includes/class-genesis-simple-hooks-admin.php';
 		$this->admin = new Genesis_Simple_Hooks_Admin();
 		$this->admin->init();
 
