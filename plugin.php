@@ -8,7 +8,7 @@
  * Author: StudioPress
  * Author URI: http://www.studiopress.com/
  *
- * Version: 2.2.1
+ * Version: 2.3.0
  *
  * Text Domain: genesis-simple-hooks
  * Domain Path: /languages

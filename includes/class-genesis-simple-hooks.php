@@ -14,7 +14,7 @@
  * Author: StudioPress
  * Author URI: http://www.studiopress.com/
  *
- * Version: 2.2.1
+ * Version: 2.3.0
  *
  * Text Domain: genesis-simple-hooks
  * Domain Path: /languages
@@ -122,13 +122,14 @@ class Genesis_Simple_Hooks {
 
 		if ( ! defined( 'PARENT_THEME_VERSION' ) || ! version_compare( PARENT_THEME_VERSION, $this->min_genesis_version, '>=' ) ) {
 
-			$plugin = get_plugin_data( $this->plugin_dir_path . 'includes/plugin.php' );
+			$plugin = get_plugin_data( $this->plugin_dir_path . 'includes/class-genesis-simple-hooks.php' );
 
 			$action = defined( 'PARENT_THEME_VERSION' ) ? __( 'upgrade to', 'plugin-boilerplate' ) : __( 'install and activate', 'plugin-boilerplate' );
 
 			// Translators: String 1 is the name of the plugin, String 2 is the minimum required version of WordPress, String 3 is a url, String 4 is the minimum required version of Genesis, and String 5 is an expected action.
 			$message = sprintf( __( '%1$s requires WordPress %2$s and <a href="%3$s" target="_blank">Genesis %4$s</a>, or greater. Please %5$s the latest version of Genesis to use this plugin.', 'plugin-boilerplate' ), $plugin['Name'], $this->min_wp_version, 'http://my.studiopress.com/?download_id=91046d629e74d525b3f2978e404e7ffa', $this->min_genesis_version, $action );
-			echo '<div class="notice notice-warning"><p>' . esc_html( $message ) . '</p></div>';
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- html in $message required for hyperlinks
+			echo '<div class="notice notice-warning"><p>' . $message . '</p></div>';
 
 		}
 
