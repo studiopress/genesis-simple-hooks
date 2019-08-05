@@ -3,8 +3,8 @@ Contributors: nathanrice, studiopress
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5553118
 Tags: hooks, genesis, genesiswp, studiopress
 Requires at least: 4.7.2
-Tested up to: 4.7.3
-Stable tag: 2.2.1
+Tested up to: 5.2.2
+Stable tag: 2.3.0
 
 This plugin creates a new Genesis settings page that allows you to insert code (HTML, Shortcodes, and PHP), and attach it to any of the 50+ action hooks throughout the Genesis Theme Framework, from StudioPress.
 
@@ -47,14 +47,14 @@ The most common request from Genesis users is how to properly modify their foote
 **Modifying the post-info**
 `
 <div class="post-info">
-	<span class="time"><?php the_time('F j, Y'); ?></span> <span class="author">by <?php the_author_posts_link(); ?></span> <span class="post-comments"><a href="<?php the_permalink(); ?>#respond"><?php comments_number('Leave a Comment', '1 Comment', '% Comments'); ?></a></span> <a class="post-edit-link"><?php edit_post_link('(Edit)', '', ''); ?></a>   
+	<span class="time"><?php the_time('F j, Y'); ?></span> <span class="author">by <?php the_author_posts_link(); ?></span> <span class="post-comments"><a href="<?php the_permalink(); ?>#respond"><?php comments_number('Leave a Comment', '1 Comment', '% Comments'); ?></a></span> <a class="post-edit-link"><?php edit_post_link('(Edit)', '', ''); ?></a>
 </div>
 `
 
 **Modifying the post-meta**
 `
 <div class="post-meta">
-	<span class="categories">Filed under: <?php the_category(', ') ?></span>  <span class="tags">Tagged with <?php the_tags('') ?></span>      
+	<span class="categories">Filed under: <?php the_category(', ') ?></span>  <span class="tags">Tagged with <?php the_tags('') ?></span>
 </div>
 `
 
@@ -71,6 +71,9 @@ The most common request from Genesis users is how to properly modify their foote
 *Note: You must have the `Execute PHP on this hook` option selected in order to use template tags*
 
 == Changelog ==
+
+= 2.3.0 =
+* Update to match WordPress PHP standards
 
 = 2.2.1 =
 * Genesis 2.6+ compatibility (prevents white screen).
@@ -149,11 +152,3 @@ The most common request from Genesis users is how to properly modify their foote
 
 = 0.1 =
 * Initial Release
-
-
-
-
-
-
-
-
