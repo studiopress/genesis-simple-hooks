@@ -23,7 +23,8 @@
 	"scripts": {
 		"phpcs": "phpcs --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./",
 		"phpcs-compat": "phpcs --extensions=php --standard=PHPCompatibilityWP --ignore=vendor/,node_modules/,assets/ --runtime-set testVersion 5.6- -p ./",
-		"phpcbf": "phpcbf --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./"
+		"phpcbf": "phpcbf --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./",
+		"makepot": "wp i18n make-pot . languages/genesis-simple-hooks.pot --headers='{ \"Report-Msgid-Bugs-To\": \"StudioPress <translations@studiopress.com>\" }' --exclude=bin/ --quiet"
 	},
 	"support": {
 		"issues": "https://github.com/studiopress/genesis-simple-hooks/issues",
