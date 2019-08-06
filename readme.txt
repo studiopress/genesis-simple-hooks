@@ -73,7 +73,10 @@ The most common request from Genesis users is how to properly modify their foote
 == Changelog ==
 
 = 2.3.0 =
-* Update to match WordPress PHP standards
+* Reorganize plugin based on our standard boilerplate.
+* Update to match WordPress PHP standards.
+* Fix bug where plugin name was empty in the minimum version warning.
+* Increase minimum Genesis version to 2.5.0.
 
 = 2.2.1 =
 * Genesis 2.6+ compatibility (prevents white screen).
