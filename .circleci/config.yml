@@ -8,6 +8,39 @@ jobs:
       - checkout
       - prepare-environment
       - run: composer phpcs
+  svn-deploy-bump-tested-up-to:
+    docker:
+      - image: cimg/base:2022.04
+    steps:
+      - checkout:
+          path: /tmp/src
+      - run:
+          name: Deploying only the 'Tested up to' bump to SVN
+          command: |
+            sudo apt-get update
+            sudo apt-get install subversion
+            SLUG=genesis-responsive-slider
+            VERSION=$(grep -i 'Version:' "/tmp/src/$SLUG.php" | awk -F: '{print $2}' | sed 's/^\s//')
+            if [ ! $VERSION ]
+              then
+              echo "Didn't find a version of the plugin"
+              exit 1
+            fi
+            TESTED_UP_TO_VERSION=$(grep -i 'tested up to:' /tmp/src/readme.txt | awk -F: '{print $2}' | sed 's/^\s//')
+            if [ ! $TESTED_UP_TO_VERSION ]
+              then
+              echo "Didn't find a 'Tested up to' version, so can't bump it"
+              exit 1
+            fi
+            svn co https://plugins.svn.wordpress.org/${SLUG} --depth=empty .
+            svn up trunk
+            svn up tags --depth=empty
+            svn up tags/${VERSION}
+            sed -i "s/tested up to: .*/Tested up to: ${TESTED_UP_TO_VERSION}/i" trunk/readme.txt tags/${VERSION}/readme.txt
+            echo "Here is the svn stat about to be checked in:"
+            svn stat
+            echo "And here is the diff:"
+            svn diff
 
 commands:
  prepare-environment:
@@ -20,3 +53,15 @@ workflows:
   check-wp-cs:
     jobs:
       - test
+      - approval-for-svn-deploy-bump-tested-up-to:
+          type: approval
+          requires:
+            - test
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: /^bump-tested-up-to.*/
+      - svn-deploy-bump-tested-up-to:
+          requires:
+            - approval-for-svn-deploy-bump-tested-up-to
