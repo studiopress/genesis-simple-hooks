@@ -4,7 +4,6 @@
 .gitattributes
 .gitignore
 composer.json
-composer.lock
 Gruntfile.js
 package.json
 package-lock.json
