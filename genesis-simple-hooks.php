@@ -1,6 +1,13 @@
 <?php
 /**
- * This file handles the creation of the Simple Hooks admin menu.
+ * Plugin Name: Genesis Simple Hooks
+ * Plugin URI: https://studiopress.com
+ * Description: Creates a new Genesis settings page that allows you to insert code (HTML, Shortcodes, and PHP), and attach it to any of the 50+ action hooks throughout the Genesis Theme Framework, from StudioPress.
+ * Author: StudioPress
+ * Author URI: https://www.studiopress.com/
+ * Version: 2.3.0
+ * License: GPL2+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @package genesis-simple-hooks
  */

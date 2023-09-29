@@ -1,6 +1,5 @@
 === Plugin Name ===
 Contributors: nathanrice, studiopress
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5553118
 Tags: hooks, genesis, genesiswp, studiopress
 Requires at least: 4.7.2
 Tested up to: 6.3
