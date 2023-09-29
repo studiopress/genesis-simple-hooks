@@ -4,9 +4,28 @@ orbs:
   php: circleci/php@1.0
   wp-svn: studiopress/wp-svn@0.2
 
+jobs:
+  zip:
+    executor: php/default
+    steps:
+      - checkout
+      - run:
+          name: Zipping
+          command: |
+            plugin_slug=genesis-simple-hooks
+            build_version=`grep 'Version:' $plugin_slug.php | cut -f4 -d' '`
+            zip_file_name="$plugin_slug.$build_version.zip"
+            cd ..
+            # In .distignore, begin and end every line with *
+            sed "s/^[^*]/*&/g" "$plugin_slug/.distignore" | sed "s/[^*]$/&*/g" | xargs zip -r "$zip_file_name" $plugin_slug -x
+            mkdir /tmp/artifacts
+            mv $zip_file_name /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
 workflows:
   test-deploy:
     jobs:
+      - zip
       - php/test:
           test-command: phpcs
       - wp-svn/deploy:
