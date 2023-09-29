@@ -71,6 +71,9 @@ The most common request from Genesis users is how to properly modify their foote
 
 == Changelog ==
 
+= 2.3.1 =
+* Fix an error on installing the plugin, from there being no header.
+
 = 2.3.0 =
 * Reorganize plugin based on our standard boilerplate.
 * Update to match WordPress PHP standards.
