@@ -3,7 +3,7 @@ Contributors: nathanrice, studiopress
 Tags: hooks, genesis, genesiswp, studiopress
 Requires at least: 4.7.2
 Tested up to: 6.3
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 
 This plugin creates a new Genesis settings page that allows you to insert code (HTML, Shortcodes, and PHP), and attach it to any of the 50+ action hooks throughout the Genesis Theme Framework, from StudioPress.
 
