@@ -35,9 +35,14 @@ workflows:
       - php/test:
           test-command: phpcs
       - wp-svn/deploy:
-          dry-run: true
+          context: genesis-svn
           requires:
             - php/test
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
       - approval-for-deploy-tested-up-to-bump:
           requires: 
             - php/test
