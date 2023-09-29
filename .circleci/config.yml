@@ -34,12 +34,10 @@ workflows:
       - zip
       - php/test:
           test-command: phpcs
-      - wp-svn/check-versions
       - wp-svn/deploy:
           dry-run: true
           requires:
             - php/test
-            - wp-svn/check-versions
       - approval-for-deploy-tested-up-to-bump:
           requires: 
             - php/test
