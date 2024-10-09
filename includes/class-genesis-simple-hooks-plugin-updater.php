@@ -10,8 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use stdClass;
-
 /**
  * The GenesisBlocksPluginUpdater class which can be used to pull plugin updates from a new location.
  */
