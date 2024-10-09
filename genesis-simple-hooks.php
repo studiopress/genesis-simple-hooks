@@ -37,7 +37,7 @@ add_action( 'plugins_loaded', array( Genesis_Simple_Hooks(), 'init' ) );
 function genesis_simple_hooks_check_for_upgrades() {
 	$properties = array(
 		'plugin_slug'     => 'genesis-simple-hooks',
-		'plugin_basename' => plugin_basename( __FILE__ ),
+		'plugin_basename' => plugin_basename( dirname(__FILE__) . '/plugin.php' ),
 	);
 
 	require_once __DIR__ . '/includes/class-genesis-simple-hooks-plugin-updater.php';
