@@ -30,3 +30,17 @@ function genesis_simple_hooks() {
  * Initialize the object on `plugins_loaded`.
  */
 add_action( 'plugins_loaded', array( Genesis_Simple_Hooks(), 'init' ) );
+
+/**
+ * Initialize checking of plugin updates from WP Engine.
+ */
+function genesis_simple_hooks_check_for_upgrades() {
+	$properties = array(
+		'plugin_slug'     => 'genesis-simple-hooks',
+		'plugin_basename' => plugin_basename( __FILE__ ),
+	);
+
+	require_once __DIR__ . '/includes/class-genesis-simple-hooks-plugin-updater.php';
+	new GenesisSimpleHooksPluginUpdater( $properties );
+}
+add_action( 'admin_init', 'genesis_simple_hooks_check_for_upgrades' );
