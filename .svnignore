@@ -1,5 +1,14 @@
+.DS_Store
 .git
 .gitignore
 .gitattributes
 .svnignore
+.nvmrc
+.circleci/
+composer.json
+composer.lock
+Gruntfile.js
+package-lock.json
+package.json
 node_modules
+scripts/
