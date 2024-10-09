@@ -1,36 +1,41 @@
-# Copyright (C) 2019 StudioPress
-# This file is distributed under the same license as the Genesis Simple Hooks plugin.
+# Copyright (C) 2024 StudioPress
+# This file is distributed under the GNU General Public License v2.0 (or later).
 msgid ""
 msgstr ""
-"Project-Id-Version: Genesis Simple Hooks 2.3.0\n"
+"Project-Id-Version: Genesis Simple Hooks 2.3.1\n"
 "Report-Msgid-Bugs-To: StudioPress <translations@studiopress.com>\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-08-02T15:09:40+00:00\n"
+"POT-Creation-Date: 2024-10-09T11:21:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.2.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: genesis-simple-hooks\n"
 
 #. Plugin Name of the plugin
+#: plugin.php
 msgid "Genesis Simple Hooks"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: plugin.php
 msgid "http://www.studiopress.com/plugins/simple-hooks"
 msgstr ""
 
 #. Description of the plugin
+#: plugin.php
 msgid "Genesis Simple Hooks allows you easy access to the 50+ Action Hooks in the Genesis Theme."
 msgstr ""
 
 #. Author of the plugin
+#: plugin.php
 msgid "StudioPress"
 msgstr ""
 
 #. Author URI of the plugin
+#: plugin.php
 msgid "http://www.studiopress.com/"
 msgstr ""
 
