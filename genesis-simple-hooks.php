@@ -41,6 +41,6 @@ function genesis_simple_hooks_check_for_upgrades() {
 	);
 
 	require_once __DIR__ . '/includes/class-genesis-simple-hooks-plugin-updater.php';
-	new GenesisSimpleHooksPluginUpdater( $properties );
+	new Genesis_Simple_Hooks_Plugin_Updater( $properties );
 }
 add_action( 'admin_init', 'genesis_simple_hooks_check_for_upgrades' );

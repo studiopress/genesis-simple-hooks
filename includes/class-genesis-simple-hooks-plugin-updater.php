@@ -2,7 +2,7 @@
 /**
  * The GenesisSimpleHooksPluginUpdater class which can be used to pull plugin updates from a new location.
  *
- * @package genesis-simple-hooks 
+ * @package genesis-simple-hooks
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The GenesisBlocksPluginUpdater class which can be used to pull plugin updates from a new location.
  */
-class GenesisSimpleHooksPluginUpdater {
+class Genesis_Simple_Hooks_Plugin_Updater {
 	/**
 	 * The URL where the api is located.
 	 *
@@ -49,6 +49,7 @@ class GenesisSimpleHooksPluginUpdater {
 			empty( $properties['plugin_basename'] )
 		) {
 			// If any of the values we require were not passed, throw a fatal.
+			// phpcs:ignore
 			error_log( 'WPE Secure Plugin Updater received a malformed request.' );
 			return;
 		}
