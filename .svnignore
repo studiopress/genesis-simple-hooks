@@ -12,4 +12,5 @@ package-lock.json
 package.json
 node_modules
 scripts/
+vendor/
 *.zip
