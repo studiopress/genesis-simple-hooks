@@ -102,8 +102,6 @@ class Genesis_Simple_Hooks {
 	 */
 	public function init() {
 
-		$this->load_plugin_textdomain();
-
 		add_action( 'admin_notices', array( $this, 'requirements_notice' ) );
 
 		// Because this is a Genesis-dependent plugin.
@@ -135,14 +133,6 @@ class Genesis_Simple_Hooks {
 
 	}
 
-	/**
-	 * Load the plugin textdomain, for translation.
-	 *
-	 * @since 2.2.0
-	 */
-	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'genesis-simple-hooks', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-	}
 
 	/**
 	 * All general includes.
