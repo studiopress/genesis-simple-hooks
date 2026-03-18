@@ -131,8 +131,6 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 		// For backward compatibility.
 		define( 'SIMPLEHOOKS_SETTINGS_FIELD', $this->settings_field );
 
-		$this->define_hooks();
-
 	}
 
 	/**
@@ -142,6 +140,8 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 	 */
 	public function init() {
 
+		add_action( 'init', array( $this, 'define_hooks' ) );
+		add_action( 'init', array( $this, 'set_default_settings' ) );
 		add_action( 'genesis_admin_menu', array( $this, 'admin_menu' ) );
 
 	}
@@ -167,8 +167,19 @@ class Genesis_Simple_Hooks_Admin extends Genesis_Admin_Boxes {
 			'screen_icon' => 'plugins',
 		);
 
-		// Create the page.
-		$this->create( $page_id, $menu_ops, $page_ops, $this->settings_field, $this->get_default_settings() );
+		// Create the page. Default settings are set separately on init.
+		$this->create( $page_id, $menu_ops, $page_ops, $this->settings_field );
+
+	}
+
+	/**
+	 * Set default settings property after hooks are defined.
+	 *
+	 * @since 2.3.2
+	 */
+	public function set_default_settings() {
+
+		$this->default_settings = $this->get_default_settings();
 
 	}
 
