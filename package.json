@@ -7,7 +7,10 @@
   },
   "scripts": {
     "makepot": "composer makepot",
-    "zip": "node scripts/create-zip.js"
+    "zip": "node scripts/create-zip.js",
+    "zip:wpe": "node scripts/create-zip.js --wpe && node scripts/create-info.js",
+    "zip:wpe:info": "node scripts/create-info.js",
+    "zip:all": "node scripts/create-zip.js && node scripts/create-zip.js --wpe && node scripts/create-info.js"
   },
   "plugin": {
     "name": "Genesis Simple Hooks",
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "adm-zip": "^0.5.16",
+    "ajv": "^8.12.0",
     "minimatch": "^10.0.1"
   }
 }
