@@ -5,6 +5,7 @@
 .svnignore
 .nvmrc
 .circleci/
+.claude/
 composer.json
 composer.lock
 Gruntfile.js
@@ -14,3 +15,4 @@ node_modules
 scripts/
 vendor/
 *.zip
+build/

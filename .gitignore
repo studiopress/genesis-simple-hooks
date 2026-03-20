@@ -1,6 +1,8 @@
 .DS_Store
 Thumbs.db
 .svn
+.claude
 node_modules/
 vendor/
 *.zip
+build
