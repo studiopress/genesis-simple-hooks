@@ -32,9 +32,16 @@ function genesis_simple_hooks() {
 add_action( 'plugins_loaded', array( Genesis_Simple_Hooks(), 'init' ) );
 
 /**
- * Initialize checking of plugin updates from WP Engine.
+ * Set up plugin updates from WP Engine.
+ *
+ * Only if the includes/class-genesis-simple-hooks-plugin-updater.php file exists. This file
+ * is not present in the version released to the WordPress.org repository.
  */
 function genesis_simple_hooks_check_for_upgrades() {
+	if ( ! file_exists( __DIR__ . '/includes/class-genesis-simple-hooks-plugin-updater.php' ) ) {
+		return;
+	}
+
 	$properties = array(
 		'plugin_slug'     => 'genesis-simple-hooks',
 		'plugin_basename' => plugin_basename( dirname( __FILE__ ) . '/plugin.php' ),
