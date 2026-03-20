@@ -10,6 +10,29 @@ function getPluginVersion() {
 	return versionMatch ? versionMatch[1].trim() : "unknown";
 }
 
+function copyPluginUpdater() {
+	const sourcePath = path.join(process.cwd(), 'scripts', 'class-genesis-simple-hooks-plugin-updater.php');
+	const targetPath = path.join(process.cwd(), 'includes', 'class-genesis-simple-hooks-plugin-updater.php');
+	fs.copyFileSync(sourcePath, targetPath);
+	console.log('Copied class-genesis-simple-hooks-plugin-updater.php to includes directory');
+}
+
+function cleanupPluginUpdater() {
+	const targetPath = path.join(process.cwd(), 'includes', 'class-genesis-simple-hooks-plugin-updater.php');
+	if (fs.existsSync(targetPath)) {
+		fs.unlinkSync(targetPath);
+		console.log('Cleaned up class-genesis-simple-hooks-plugin-updater.php from includes directory');
+	}
+}
+
+function ensureBuildDirectory(wpe = false) {
+	const buildDir = path.join(process.cwd(), 'build', wpe ? 'wpe' : 'wp.org');
+	if (!fs.existsSync(buildDir)) {
+		fs.mkdirSync(buildDir, { recursive: true });
+	}
+	return buildDir;
+}
+
 function getIgnorePatterns() {
 	const distignore = fs.readFileSync(".svnignore", "utf8");
 	return distignore
@@ -42,12 +65,17 @@ function runBuildSteps() {
 	}
 }
 
-function createZip() {
+function createZip(wpe = false) {
 	runBuildSteps();
+
+	if (wpe) {
+		copyPluginUpdater();
+	}
 
 	const version = getPluginVersion();
 	const ignorePatterns = getIgnorePatterns();
-	const zipFileName = `genesis-simple-hooks.${version}.zip`;
+	const buildDir = ensureBuildDirectory(wpe);
+	const zipFileName = path.join(buildDir, `genesis-simple-hooks.${version}.zip`);
 
 	const zip = new AdmZip();
 
@@ -77,6 +105,11 @@ function createZip() {
 
 	zip.writeZip(zipFileName);
 	console.log(`Created ${zipFileName}`);
+
+	if (wpe) {
+		cleanupPluginUpdater();
+	}
 }
 
-createZip();
+const wpeFlag = process.argv.includes('--wpe');
+createZip(wpeFlag);
