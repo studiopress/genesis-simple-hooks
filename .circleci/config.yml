@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   php: circleci/php@1.0
   node: circleci/node@5.0
-  wp-svn: studiopress/wp-svn@0.1
+  wp-svn: studiopress/wp-svn@0.2
 
 executors:
   node-only:
@@ -51,6 +51,16 @@ jobs:
           path: build/wpe/info.json
           destination: info.json
 
+  svn_deploy_tag:
+    docker:
+      - image: cimg/base:current
+    working_directory: ~/project
+    steps:
+      - checkout:
+          path: genesis-simple-hooks
+      - wp-svn/deploy-plugin:
+          plugin-path: genesis-simple-hooks
+
 workflows:
   test-deploy:
     jobs:
@@ -68,6 +78,22 @@ workflows:
               only: /.*/
           requires:
             - zip
+      - wp-svn/check-versions:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              only: /^release\/.*/
+      - svn_deploy_tag:
+          context: genesis-svn
+          requires:
+            - zip
+            - wp-svn/check-versions
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
       - approval-for-deploy-tested-up-to-bump:
           requires:
             - php/test
