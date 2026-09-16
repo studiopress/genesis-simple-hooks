@@ -16,3 +16,4 @@ scripts/
 vendor/
 *.zip
 build/
+repo-info.yaml
